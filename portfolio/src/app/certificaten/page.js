@@ -1,9 +1,8 @@
-
 'use client'
 
 import { useState, useEffect } from 'react'
 
-export default function HomePage() {
+export default function CertificatenPage() {
   const [isDarkMode, setIsDarkMode] = useState(true)
   const [gradientColors, setGradientColors] = useState({
     dark: {
@@ -50,6 +49,7 @@ export default function HomePage() {
     setGradientColors(newColors)
     localStorage.setItem('gradientColors', JSON.stringify(newColors))
   }
+
   const getGradientStyle = () => {
     const colors = isDarkMode ? gradientColors.dark : gradientColors.light
     
@@ -105,7 +105,7 @@ export default function HomePage() {
         </div>
         
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="#" className={`hover:opacity-70 transition-opacity ${
+          <a href="/" className={`hover:opacity-70 transition-opacity ${
             isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'
           }`}>Projecten</a>
           <a href="/certificaten" className={`hover:opacity-70 transition-opacity ${
@@ -114,6 +114,14 @@ export default function HomePage() {
           <a href="#" className={`hover:opacity-70 transition-opacity ${
             isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'
           }`}>Blog</a>
+          <a href="#" className={`hover:opacity-70 transition-opacity ${
+            isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'
+          }`}>
+
+            <svg className="w-3 h-3 ml-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </a>
         </nav>
 
         <div className="flex items-center space-x-2">
@@ -332,152 +340,90 @@ export default function HomePage() {
         </div>
       )}
 
-      <main className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] px-6">
-        <div className="text-center max-w-4xl">
-          <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
-            Rayan Aghmer
+      {/* Main Content */}
+      <main className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-16">
+            Mijn Certificaten
           </h1>
           
-          <p className={`text-xl md:text-2xl mb-8 max-w-3xl mx-auto ${
-            isDarkMode ? 'text-gray-300' : 'text-gray-600'
-          }`}>
-           Mijn portfolio met alle opdrachten, certificaten en projecten.{' '}
-            <strong className={isDarkMode ? 'text-white' : 'text-gray-900'}>Met zowel ervaring in web development als cybersecurity en app Design</strong>
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <button 
-              onClick={() => document.getElementById('werk-sectie').scrollIntoView({ behavior: 'smooth' })}
-              className={`border px-8 py-4 rounded-lg font-medium transition-all duration-300 ${
-                isDarkMode 
-                  ? 'bg-transparent border-white text-white hover:bg-white hover:text-black' 
-                  : 'bg-transparent border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'
-              }`}
-            >
-              Zie meer
-            </button>
-            <button className={`px-8 py-4 rounded-lg font-medium transition-all duration-300 ${
-              isDarkMode 
-                ? 'bg-transparent text-white hover:bg-gray-800' 
-                : 'bg-transparent text-gray-900 hover:bg-gray-200'
-            }`}>
-              Neem Contact Op
-            </button>
-          </div>
-
-          <div className="flex items-center justify-center text-gray-400">
-            <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
-          </div>
-        </div>
-      </main>
-
-      <section id="werk-sectie" className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            Mijn Werk
-          </h2>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* eerste project*/}
-            <a 
-              href="https://github.com/rayanaghmer/portfolio" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className={`block backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
-                isDarkMode 
-                  ? 'bg-gradient-to-br from-blue-800/20 to-slate-800/20 border border-blue-500/20 hover:border-blue-400/40' 
-                  : 'bg-gradient-to-br from-blue-100/50 to-slate-100/50 border border-blue-300/30 hover:border-blue-400/50'
-              }`}
-            >
+            {/* Certificaat 1 */}
+            <div className={`backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
+              isDarkMode 
+                ? 'bg-gradient-to-br from-blue-800/20 to-slate-800/20 border border-blue-500/20 hover:border-blue-400/40' 
+                : 'bg-gradient-to-br from-blue-100/50 to-slate-100/50 border border-blue-300/30 hover:border-blue-400/50'
+            }`}>
               <div className="w-full h-48 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg mb-4 flex items-center justify-center">
                 <span className="text-white font-semibold text-lg">Web Development</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Portfolio Website</h3>
+              <h3 className="text-xl font-semibold mb-2">HTML & CSS Certificaat</h3>
               <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                Een moderne portfolio website gebouwd met Next.js en Tailwind CSS, met responsive design en smooth scrolling.
+                Certificaat voor het succesvol afronden van de HTML & CSS cursus met focus op responsive design en moderne CSS technieken.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className={`px-3 py-1 rounded-full text-sm ${
                   isDarkMode 
                     ? 'bg-blue-600/20 text-blue-300' 
                     : 'bg-blue-100 text-blue-800'
-                }`}>Next.js</span>
+                }`}>HTML</span>
                 <span className={`px-3 py-1 rounded-full text-sm ${
                   isDarkMode 
                     ? 'bg-blue-600/20 text-blue-300' 
                     : 'bg-blue-100 text-blue-800'
-                }`}>React</span>
+                }`}>CSS</span>
                 <span className={`px-3 py-1 rounded-full text-sm ${
                   isDarkMode 
                     ? 'bg-blue-600/20 text-blue-300' 
                     : 'bg-blue-100 text-blue-800'
-                }`}>Tailwind</span>
+                }`}>Responsive Design</span>
               </div>
-            </a>
+            </div>
 
-            {/* 2de project*/}
-            <a 
-              href="https://github.com/rayanaghmer/mr-robot-ctf" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className={`block backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
-                isDarkMode 
-                  ? 'bg-gradient-to-br from-blue-800/20 to-slate-800/20 border border-blue-500/20 hover:border-blue-400/40' 
-                  : 'bg-gradient-to-br from-blue-100/50 to-slate-100/50 border border-blue-300/30 hover:border-blue-400/50'
-              }`}
-            >
-              <div className="w-full h-48 rounded-lg mb-4 overflow-hidden relative">
-                <img 
-                  src="/capturetheflag.jpg" 
-                  alt="Mr Robot Capture The Flag Project" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                  <span className="text-white font-semibold text-lg bg-green-600/80 px-4 py-2 rounded-lg">Cybersecurity</span>
-                </div>
+            {/* Certificaat 2 */}
+            <div className={`backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
+              isDarkMode 
+                ? 'bg-gradient-to-br from-green-800/20 to-slate-800/20 border border-green-500/20 hover:border-green-400/40' 
+                : 'bg-gradient-to-br from-green-100/50 to-slate-100/50 border border-green-300/30 hover:border-green-400/50'
+            }`}>
+              <div className="w-full h-48 bg-gradient-to-br from-green-600 to-green-800 rounded-lg mb-4 flex items-center justify-center">
+                <span className="text-white font-semibold text-lg">Cybersecurity</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Mr Robot Capture The Flag</h3>
+              <h3 className="text-xl font-semibold mb-2">Security Fundamentals</h3>
               <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Een Capture The Flag-opdracht voor het vak Security, waarin ik kennis maakte met tools zoals Nmap, John The Ripper, Nikto en een zelfgeschreven bruteforce-script
+                Certificaat voor cybersecurity fundamentals inclusief penetration testing, vulnerability assessment en security best practices.
               </p>
               <div className="flex flex-wrap gap-2">
+                <span className={`px-3 py-1 rounded-full text-sm ${
+                  isDarkMode 
+                    ? 'bg-green-600/20 text-green-300' 
+                    : 'bg-green-100 text-green-800'
+                }`}>Penetration Testing</span>
+                <span className={`px-3 py-1 rounded-full text-sm ${
+                  isDarkMode 
+                    ? 'bg-green-600/20 text-green-300' 
+                    : 'bg-green-100 text-green-800'
+                }`}>Security Analysis</span>
                 <span className={`px-3 py-1 rounded-full text-sm ${
                   isDarkMode 
                     ? 'bg-green-600/20 text-green-300' 
                     : 'bg-green-100 text-green-800'
                 }`}>Kali Linux</span>
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-green-600/20 text-green-300' 
-                    : 'bg-green-100 text-green-800'
-                }`}>Cybersecurity</span>
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-green-600/20 text-green-300' 
-                    : 'bg-green-100 text-green-800'
-                }`}>Penetesting</span>
               </div>
-            </a>
+            </div>
 
-            {/* derde project */}
-            <a 
-              href="https://www.figma.com/file/example/mobile-app-design" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className={`block backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
-                isDarkMode 
-                  ? 'bg-gradient-to-br from-blue-800/20 to-slate-800/20 border border-blue-500/20 hover:border-blue-400/40' 
-                  : 'bg-gradient-to-br from-blue-100/50 to-slate-100/50 border border-blue-300/30 hover:border-blue-400/50'
-              }`}
-            >
+            {/* Certificaat 3 */}
+            <div className={`backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
+              isDarkMode 
+                ? 'bg-gradient-to-br from-purple-800/20 to-slate-800/20 border border-purple-500/20 hover:border-purple-400/40' 
+                : 'bg-gradient-to-br from-purple-100/50 to-slate-100/50 border border-purple-300/30 hover:border-purple-400/50'
+            }`}>
               <div className="w-full h-48 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg mb-4 flex items-center justify-center">
                 <span className="text-white font-semibold text-lg">App Design</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Mobile App UI/UX</h3>
+              <h3 className="text-xl font-semibold mb-2">UI/UX Design Certificaat</h3>
               <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Een gamified buurtapp waarin bewoners punten verdienen door activiteiten voor de wijk te doen en deze kunnen inwisselen voor kortingen bij lokale winkels. 
+                Certificaat voor UI/UX design met focus op user experience, wireframing, prototyping en design thinking methodologieën.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className={`px-3 py-1 rounded-full text-sm ${
@@ -489,128 +435,17 @@ export default function HomePage() {
                   isDarkMode 
                     ? 'bg-purple-600/20 text-purple-300' 
                     : 'bg-purple-100 text-purple-800'
-                }`}>UI/UX</span>
+                }`}>Prototyping</span>
                 <span className={`px-3 py-1 rounded-full text-sm ${
                   isDarkMode 
                     ? 'bg-purple-600/20 text-purple-300' 
                     : 'bg-purple-100 text-purple-800'
-                }`}>Mobile App Design</span>
+                }`}>Design Thinking</span>
               </div>
-            </a>
-
-            {/* Vierde project */}
-            <a 
-              href="https://github.com/rayanaghmer/ecommerce-platform" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className={`block backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
-                isDarkMode 
-                  ? 'bg-gradient-to-br from-blue-800/20 to-slate-800/20 border border-blue-500/20 hover:border-blue-400/40' 
-                  : 'bg-gradient-to-br from-blue-100/50 to-slate-100/50 border border-blue-300/30 hover:border-blue-400/50'
-              }`}
-            >
-              <div className="w-full h-48 bg-gradient-to-br from-orange-600 to-orange-800 rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-white font-semibold text-lg">Full Stack</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">E-commerce Website</h3>
-              <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-               Werkend e-commerce website gemaakt met HTML CSS en JavaScript.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-orange-600/20 text-orange-300' 
-                    : 'bg-orange-100 text-orange-800'
-                }`}>HTML</span>
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-orange-600/20 text-orange-300' 
-                    : 'bg-orange-100 text-orange-800'
-                }`}>CSS</span>
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-orange-600/20 text-orange-300' 
-                    : 'bg-orange-100 text-orange-800'
-                }`}>JavaScript</span>
-              </div>
-            </a>
-
-            {/* Project 5 */}
-            <a 
-              href="https://github.com/rayanaghmer/business-intelligence-dashboard" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className={`block backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
-                isDarkMode 
-                  ? 'bg-gradient-to-br from-blue-800/20 to-slate-800/20 border border-blue-500/20 hover:border-blue-400/40' 
-                  : 'bg-gradient-to-br from-blue-100/50 to-slate-100/50 border border-blue-300/30 hover:border-blue-400/50'
-              }`}
-            >
-              <div className="w-full h-48 bg-gradient-to-br from-red-600 to-red-800 rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-white font-semibold text-lg">Afsprakenplanner</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Simpele Afsprakenplanner</h3>
-              <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                Interactive afsprakenplanner gemaakt met PHP, CSS en SQL. 
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-red-600/20 text-red-300' 
-                    : 'bg-red-100 text-red-800'
-                }`}>PHP</span>
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-red-600/20 text-red-300' 
-                    : 'bg-red-100 text-red-800'
-                }`}>CSS</span>
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-red-600/20 text-red-300' 
-                    : 'bg-red-100 text-red-800'
-                }`}>SQL</span>
-              </div>
-            </a>
-
-            {/* Project 6 */}
-            <a 
-              href="https://github.com/rayanaghmer/cicd-pipeline" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className={`block backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
-                isDarkMode 
-                  ? 'bg-gradient-to-br from-blue-800/20 to-slate-800/20 border border-blue-500/20 hover:border-blue-400/40' 
-                  : 'bg-gradient-to-br from-blue-100/50 to-slate-100/50 border border-blue-300/30 hover:border-blue-400/50'
-              }`}
-            >
-              <div className="w-full h-48 bg-gradient-to-br from-teal-600 to-teal-800 rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-white font-semibold text-lg">DevOps</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">CI/CD Pipeline</h3>
-              <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                Geautomatiseerde deployment pipeline met Docker containers en cloud infrastructure.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-teal-600/20 text-teal-300' 
-                    : 'bg-teal-100 text-teal-800'
-                }`}>Docker</span>
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-teal-600/20 text-teal-300' 
-                    : 'bg-teal-100 text-teal-800'
-                }`}>AWS</span>
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-teal-600/20 text-teal-300' 
-                    : 'bg-teal-100 text-teal-800'
-                }`}>GitHub Actions</span>
-              </div>
-            </a>
+            </div>
           </div>
         </div>
-      </section>
+      </main>
 
       {/* Footer */}
       <footer className={`py-12 px-6 border-t ${
@@ -676,27 +511,28 @@ export default function HomePage() {
         </div>
       </footer>
 
-        <div className="fixed inset-0 pointer-events-none">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0" style={{
-              backgroundImage: `
-                linear-gradient(${isDarkMode ? 'rgba(59, 130, 246, 0.1)' : 'rgba(59, 130, 246, 0.05)'} 1px, transparent 1px),
-                linear-gradient(90deg, ${isDarkMode ? 'rgba(59, 130, 246, 0.1)' : 'rgba(59, 130, 246, 0.05)'} 1px, transparent 1px)
-              `,
-              backgroundSize: '50px 50px'
-            }}></div>
-            
-            <div className={`absolute top-20 left-20 w-32 h-32 border rounded-full ${
-              isDarkMode ? 'border-blue-400 opacity-5' : 'border-blue-600 opacity-10'
-            }`}></div>
-            <div className={`absolute bottom-20 right-20 w-24 h-24 border rounded-full ${
-              isDarkMode ? 'border-blue-300 opacity-5' : 'border-blue-500 opacity-10'
-            }`}></div>
-            <div className={`absolute top-1/2 left-1/4 w-16 h-16 border rounded-full ${
-              isDarkMode ? 'border-blue-500 opacity-5' : 'border-blue-700 opacity-10'
-            }`}></div>
-          </div>
+      {/* Background Pattern */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              linear-gradient(${isDarkMode ? 'rgba(59, 130, 246, 0.1)' : 'rgba(59, 130, 246, 0.05)'} 1px, transparent 1px),
+              linear-gradient(90deg, ${isDarkMode ? 'rgba(59, 130, 246, 0.1)' : 'rgba(59, 130, 246, 0.05)'} 1px, transparent 1px)
+            `,
+            backgroundSize: '50px 50px'
+          }}></div>
+          
+          <div className={`absolute top-20 left-20 w-32 h-32 border rounded-full ${
+            isDarkMode ? 'border-blue-400 opacity-5' : 'border-blue-600 opacity-10'
+          }`}></div>
+          <div className={`absolute bottom-20 right-20 w-24 h-24 border rounded-full ${
+            isDarkMode ? 'border-blue-300 opacity-5' : 'border-blue-500 opacity-10'
+          }`}></div>
+          <div className={`absolute top-1/2 left-1/4 w-16 h-16 border rounded-full ${
+            isDarkMode ? 'border-blue-500 opacity-5' : 'border-blue-700 opacity-10'
+          }`}></div>
         </div>
+      </div>
     </div>
   );
 }
