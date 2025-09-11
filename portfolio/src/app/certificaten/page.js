@@ -105,6 +105,9 @@ export default function CertificatenPage() {
         </div>
         
         <nav className="hidden md:flex items-center space-x-6">
+            <a href="/" className={`hover:opacity-70 transition-opacity ${
+            isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'
+          }`}>Home</a>
           <a href="/" className={`hover:opacity-70 transition-opacity ${
             isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'
           }`}>Projecten</a>

@@ -55,7 +55,7 @@ export default function HomePage() {
     
     // Map Tailwind color names to actual CSS values
     const colorMap = {
-      // Dark colors (900)
+      // Donkere Kleuren (900)
       'slate-900': '#0f172a',
       'gray-900': '#111827',
       'blue-900': '#1e3a8a',
@@ -65,7 +65,7 @@ export default function HomePage() {
       'yellow-900': '#713f12',
       'pink-900': '#831843',
       
-      // Light colors (50-100)
+      // Lichte Kleuren (50-100)
       'blue-50': '#eff6ff',
       'blue-100': '#dbeafe',
       'purple-50': '#faf5ff',
@@ -98,9 +98,9 @@ export default function HomePage() {
     >
       <header className="flex items-center justify-between px-6 py-4">
         <div className="flex items-center space-x-2">
-          <div className={`w-6 h-6 transform rotate-45 transition-colors duration-300 ${
+          {/*    <div className={`w-6 h-6 transform rotate-45 transition-colors duration-300 ${
             isDarkMode ? 'bg-white' : 'bg-gray-900'
-          }`}></div>
+          }`}></div>*/}
           <span className="text-xl font-bold">Portfolio Rayan</span>
         </div>
         
@@ -117,7 +117,7 @@ export default function HomePage() {
         </nav>
 
         <div className="flex items-center space-x-2">
-          {/* Color Picker */}
+          {/* Kleur Picker */}
           <button
             onClick={() => setShowColorPicker(!showColorPicker)}
             className={`p-2 rounded-lg transition-all duration-300 ${
@@ -132,7 +132,7 @@ export default function HomePage() {
             </svg>
           </button>
 
-          {/* Theme Switcher */}
+          {/* Thema Switcher */}
           <button
             onClick={toggleTheme}
             className={`p-2 rounded-lg transition-all duration-300 ${
@@ -155,7 +155,7 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Color Picker Panel */}
+      {/* Kleur Aanpassing Panel */}
       {showColorPicker && (
         <div className={`fixed top-20 right-6 z-50 p-6 rounded-xl shadow-lg backdrop-blur-sm border ${
           isDarkMode 
@@ -169,7 +169,7 @@ export default function HomePage() {
           </h3>
           
           <div className="space-y-4">
-            {/* Dark Mode Colors */}
+            {/* Dark mode kleuren aanpassen*/}
             <div>
               <h4 className={`text-sm font-medium mb-2 ${
                 isDarkMode ? 'text-gray-300' : 'text-gray-600'
@@ -373,6 +373,34 @@ export default function HomePage() {
         </div>
       </main>
 
+
+<section id="werk-sectie" className="py-20 px-6">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+      About Me
+    </h2>
+    <p className={`text-xl md:text-2xl mb-8 max-w-3xl mx-auto ${
+      isDarkMode ? 'text-gray-300' : 'text-gray-600'
+    }`}>
+      Mijn naam is Rayan Aghmer en ik ben een web developer en app designer. Ik heb een passie voor het ontwikkelen van websites en apps en ik hou me graag op de hoogte van de laatste trends in deze vakken.
+    </p>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+      <button 
+        onClick={() => document.getElementById('werk-sectie').scrollIntoView({ behavior: 'smooth' })}
+        className={`border px-8 py-4 rounded-lg font-medium transition-all duration-300 ${
+          isDarkMode 
+            ? 'bg-transparent border-white text-white hover:bg-white hover:text-black' 
+            : 'bg-transparent border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'
+        }`}
+      >
+        Zie meer
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
       <section id="werk-sectie" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
@@ -473,7 +501,11 @@ export default function HomePage() {
               }`}
             >
               <div className="w-full h-48 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-white font-semibold text-lg">App Design</span>
+                  <img 
+                  src="/mobileappdesign.jpg"
+                  alt="Mobile App Design Project" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-semibold mb-2">Mobile App UI/UX</h3>
               <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
@@ -586,21 +618,21 @@ export default function HomePage() {
               <div className="w-full h-48 bg-gradient-to-br from-teal-600 to-teal-800 rounded-lg mb-4 flex items-center justify-center">
                 <span className="text-white font-semibold text-lg">DevOps</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">CI/CD Pipeline</h3>
+              <h3 className="text-xl font-semibold mb-2">About Me Site</h3>
               <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                Geautomatiseerde deployment pipeline met Docker containers en cloud infrastructure.
+                Een persoonlijke ‘About Me’-website gebouwd in React, met een geïntegreerde top 10 van favoriete albums en een ingebouwde cookie-clicker game.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className={`px-3 py-1 rounded-full text-sm ${
                   isDarkMode 
                     ? 'bg-teal-600/20 text-teal-300' 
                     : 'bg-teal-100 text-teal-800'
-                }`}>Docker</span>
+                }`}>React</span>
                 <span className={`px-3 py-1 rounded-full text-sm ${
                   isDarkMode 
                     ? 'bg-teal-600/20 text-teal-300' 
                     : 'bg-teal-100 text-teal-800'
-                }`}>AWS</span>
+                }`}>Tailwind</span>
                 <span className={`px-3 py-1 rounded-full text-sm ${
                   isDarkMode 
                     ? 'bg-teal-600/20 text-teal-300' 
