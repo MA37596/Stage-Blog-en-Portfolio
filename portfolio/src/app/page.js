@@ -422,7 +422,7 @@ export default function HomePage() {
               <div className="w-full h-48 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg mb-4 flex items-center justify-center">
                 <span className="text-white font-semibold text-lg">Web Development</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Portfolio Website</h3>
+              <h3 className="text-xl font-semibold mb-2">Casino site</h3>
               <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                 Een moderne portfolio website gebouwd met Next.js en Tailwind CSS, met responsive design en smooth scrolling.
               </p>
@@ -616,7 +616,7 @@ export default function HomePage() {
               }`}
             >
               <div className="w-full h-48 bg-gradient-to-br from-teal-600 to-teal-800 rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-white font-semibold text-lg">DevOps</span>
+                <span className="text-white font-semibold text-lg">React Project</span>
               </div>
               <h3 className="text-xl font-semibold mb-2">About Me Site</h3>
               <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
@@ -637,7 +637,7 @@ export default function HomePage() {
                   isDarkMode 
                     ? 'bg-teal-600/20 text-teal-300' 
                     : 'bg-teal-100 text-teal-800'
-                }`}>GitHub Actions</span>
+                }`}>Responsiveness</span>
               </div>
             </a>
           </div>
