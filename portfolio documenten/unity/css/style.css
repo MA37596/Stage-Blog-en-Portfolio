@@ -1,0 +1,291 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    transform: translate(65);
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.header {
+    background: black;
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    padding-left: 40px;
+}
+
+.headerTitle {
+    color: white;
+    text-transform: uppercase;
+    font-size: 250%;
+    font-weight: 200;
+}
+
+.headerButton {
+    text-transform: uppercase;
+    background: transparent;
+    color: whitesmoke;
+    border: none;
+    font-size: 150%;
+    letter-spacing: 2px;
+}
+
+.headerButton:hover {
+    cursor: pointer;
+}
+
+.mainNavigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    /*extra voor animation*/
+    opacity: 0;
+    transition: 0.8s all;
+}
+
+.mainNavigationList {
+    list-style: none;
+}
+
+.mainNavigationListItem {
+    color: antiquewhite;
+    font-size: 350%;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mainNavigationListItem>a {
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+.bigfigure {
+    width: 100%;
+    height: 110vh;
+    color: black;
+}
+
+.bigfigure>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.collections {
+    width: 100%;
+    padding: 40px;
+
+}
+
+.collectionsTitle,
+.infoTitle {
+    font-size: 350%;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.collectionsList {
+    list-style: none;
+    display: flex;
+    gap: 1px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.collectionsListItem {
+    width: 450px;
+    height: 700px;
+    background: black;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.collectionsListItem>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info {
+    padding: 40px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.block {
+    width: 400px;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.info p {
+    max-width: 50ch;
+}
+
+@media screen and(max-width:700px) {
+    body {
+        font-size: 14px;
+    }
+
+    .headerTitle {
+        font-size: 300%;
+    }
+}
+
+.text-overlay {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+    background-color: transparent;
+    padding: 10px;
+}
+
+
+
+
+.buttontwee{
+  background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+  border-radius: 10px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 3rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transform: 3;
+  margin-left: 9rem;
+  margin-top: 60rem;
+  z-index: 1;
+}
+
+.buttontwee:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+@media (min-width: 768px) {
+  .button-36 {
+    padding: 0 2.6rem;
+  }
+}
+
+
+footer{
+    background-color: #111;
+}
+.footerContainer{
+    width: 100%;
+    padding: 70px 30px 20px ;
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+.socialIcons a{
+    text-decoration: none;
+    padding:  10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+.socialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0,9;
+}
+/* Hover affect on social media icon */
+.socialIcons a:hover{
+    background-color: #111;
+    transition: 0.5s;
+}
+.socialIcons a:hover i{
+    color: white;
+    transition: 0.5s;
+}
+.footerNav{
+    margin: 30px 0;
+}
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerNav ul li a{
+    color:white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+
+}
+.footerNav ul li a:hover{
+    opacity: 1;
+}
+.footerBottom{
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+.footerBottom p{
+    color: white;
+}
+.designer{
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+@media (max-width: 700px){
+    .footerNav ul{
+        flex-direction: column;
+    } 
+    .footerNav ul li{
+        width:100%;
+        text-align: center;
+        margin: 10px;
+    }
+    .socialIcons a{
+        padding: 8px;
+        margin: 4px;
+    }
+}

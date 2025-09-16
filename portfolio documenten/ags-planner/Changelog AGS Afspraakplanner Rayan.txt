@@ -1,0 +1,20 @@
+Changelog AGS Afspraakplanner Rayan Aghmer SD2C:
+
+Commits f88ccf9: November 19-2024:
+- Nieuwe bestanden toegevoegd.
+- Readme gemaakt
+---------------------------------
+
+Commits fb1abec: November 27-2024
+- De volgende bestanden zijn toegevoegd aan mijn github repository. (Dashboard.php, Docenten.php, index.php, Logout.php, style.css en alle benodigde bestanden om de database functioneel te krijgen.)
+---------------------------------
+Commits 15431c1: November 28-2024:
+- Alle bugs gefixt in de php die er voor zorgde dat de inlog page het niet deed.
+- Werkende inlog pagina waarbij er een admin login is,en een inlog voor studenten. 
+- Mogelijk komen er nog updates vandaag afhankelijk van wat ik nog kan fixen binnen 2 uurtjes tijd.
+-------------------------------------------------------------------------------------------------------
+Commits 55a2f99: November 29-2024:
+- Dashboard.php is alleen toegankelijk als er daadwerkelijk is ingelogd. PHP code controleert of de gebruiker is ingelogd. Indien dit niet het geval is word gebruiker teruggestuurd naar de index.php (de inlogpagina dus.)
+- Als een user inlogt kan de user zien wie is ingelogd.
+- Saldo systeem toegevoegd. Bij het printen word er saldo van de rekening van de student afgetrokken. Vanuit de database kan je keurig meekijken wat er bij komt en er van af gaat.
+- docenten hebben ongelimiteerde saldo, Dit houd in dat zij oneindig kunnen printen zonder limiet.
