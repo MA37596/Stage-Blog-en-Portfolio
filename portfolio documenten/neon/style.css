@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+.neon {
+    height: 80rem;
+    background: #252A34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.circle {
+    height: 40rem;
+    width: 40rem;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: inset 0 0 3rem 0 rgba(0, 0, 0, 0.6);
+    animation: colorRotation 30s alternate infinite;
+}
+
+.circle--first {
+    top: -10%;
+    left: -10%;
+    background: linear-gradient(#2FA4FF, #00FFDD);
+}
+
+.circle--second {
+    right: -10%;
+    top: -10%;
+    background: linear-gradient(#49FF00, #77D970);
+}
+
+.circle--third {
+    left: -10%;
+    top: 50%;
+    background: linear-gradient(#49FF00, #77D970);
+}
+
+.circle--fourth {
+    right: -10%;
+    top: 55%;
+    background: linear-gradient(#2FA4FF, #00FFDD);
+}
+
+.neon h1 {
+    color: white;
+    font-size: 300%;
+    animation-name: popup;
+    animation-duration: 0.8s;
+    animation-fill-mode: backwards;
+    animation-delay: 1.4s;
+    z-index: 1;
+}
+
+.cards {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    background: rgba(34, 40, 49, 0.8);
+    list-style: none;
+    border: 0.1rem solid rgba(255, 255, 255, 0.6);
+    animation-name: popup;
+    animation-duration: 0.8s;
+    animation-fill-mode: backwards;
+    transition: 0.2s transform;
+}
+
+.card::after {
+    content: "";
+    background: linear-gradient(#2FA4FF, #00FFDD);
+    width: 100%;
+    height: 2rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: colorRotation 30s alternate infinite;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card:nth-of-type(2)::after,
+.card:nth-of-type(4)::after,
+.card:nth-of-type(6)::after {
+    background: linear-gradient(#49FF00, #77D970);
+}
+
+.card:nth-of-type(1) {
+    animation-delay: 0s;
+}
+
+.card:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-of-type(3) {
+    animation-delay: 0.3s;
+}
+
+.card:nth-of-type(4) {
+    animation-delay: 0.4s;
+}
+
+.card:nth-of-type(5) {
+    animation-delay: 0.5s;
+}
+
+.card:nth-of-type(6) {
+    animation-delay: 0.6s;
+}
+
+@keyframes colorRotation {
+    from {
+        filter: hue-rotate(0);
+    }
+    to {
+        filter: hue-rotate(1turn);
+    }
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width:37.5rem){
+    .neon{
+        padding: 4rem;
+        height: auto;
+    }
+    .circle--second{
+display: none;
+
+    }
+}
+

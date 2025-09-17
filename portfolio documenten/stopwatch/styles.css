@@ -1,0 +1,131 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	min-height: 100vh;
+	font-size: 1rem;
+	background: rgb(98, 94, 94);
+	display: flex;
+	gap: 2rem;
+	justify-content: center;
+	align-items: center;
+	margin: 5rem;
+	flex-wrap: wrap;
+	font-family: sans-serif;
+}
+
+.card {
+	width: 40rem;
+	height: 40rem;
+	box-shadow: 1rem 1rem 2rem 0px rgba(0, 0, 0, 0.2);
+	border-radius: 5rem;
+	flex-shrink: 0;
+	gap: 2rem;
+	background: rgb(145, 143, 143);
+}
+
+.card--buy {
+	display: flex;
+	flex-direction: column;
+	padding: 4rem;
+}
+
+.card--buy img {
+	height: 70%;
+	width: 100%;
+	gap: 2rem;
+	border-radius: 4rem;
+}
+
+.card--buy p {
+	height: 20%;
+	font-size: 150%;
+	text-align: center;
+}
+
+.card--slider {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 3rem;
+	padding: 4rem;
+}
+
+.card--stopwatch {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.card--slider > h2 {
+	font-size: 500%;
+}
+
+.card--slider > input {
+	width: 100%;
+	appearance: none;
+	-webkit-appearance: none;
+	border-radius: 5rem;
+	background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);
+}
+
+.card--slider > input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	border: none;
+	height: 2.5rem;
+	width: 2.5rem;
+	border-radius: 50%;
+	background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);
+	margin: -0.4rem 0;
+}
+
+.button {
+	padding: 1rem 2rem;
+	font-size: 200%;
+	border-radius: 0.5rem;
+	color: white;
+	width: 10rem;
+}
+
+.button--start {
+	background: rgb(75, 145, 81);
+}
+
+.button--stop {
+	background: #8a4343;
+}
+
+.button--reset {
+	background: #234256;
+}
+
+.timerText {
+	font-size: 300%;
+	color: rgb(0, 0, 0);
+}
+
+.spanWrapper {
+	background: rgb(221, 221, 221);
+	border-radius: 1rem;
+	padding: 0.8rem 2rem;
+	border-style: outset;
+	border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+	width: 31rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 200%;
+}
+
+.miliText {
+	font-size: 200%;
+}

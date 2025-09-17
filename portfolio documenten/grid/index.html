@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <met    http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="main.js" defer></script>
+    <script src="time.js" defer></script>
+    <script src="piechart.js" defer></script>
+    <script src="stopwatch.js" defer></script>
+    <title>Grid</title>
+</head>
+
+<body>
+    <main class="dashboard">
+        <secion class="section--first">
+            <article class="card card--first">
+                <p id="time"></p>
+            </article>
+            <article class="card card--second">
+                <canvas id="js--chart-1"></canvas>
+            </article>
+            <article class="card card--third">
+                <canvas id="js--chart-3"></canvas>
+            </article>
+            <article class="card card--third">
+                <canvas id="js--chart-3"></canvas>
+            </article>
+            <article class="card card--stopwatch card--fourth" aria-label="article">
+                <div class="spanWrapper">
+                    <div>
+                        <span class="timerText" id="js--hoursTimer">00</span>
+                        <span class="timerText">:</span>
+                        <span class="timerText" id="js--minutesTimer">00</span>
+                        <span class="timerText">:</span>
+                        <span class="timerText" id="js--secondsTimer">00</span>
+                    </div>
+                    <p class="timerText miliText" id="js--milisecondsTimer">000</p>
+                </div>
+                <section class="buttonWrapper" aria-label="section">
+                    <button class="button button--start" id="js--start">Start</button>
+                    <button class="button button--stop" id="js--stop">Stop</button>
+                    <button class="button button--reset" id="js--reset">Reset</button>
+                </section>
+            </article>
+        </secion>
+        <secion class="section--second">
+            <canvas id="js--chart-2"></canvas>
+        </secion>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+Printafspraken per kwartier kunnen beheren.
+Per kwartier kunnen aangeven welk soort printafspraak beschikbaar is
+Papierformaat (A5, A4, A3, A2, A1)
+Per kwartier kunnen aangeven hoeveel printafspraken tegelijk kunnen plaatsvinden.
+Tijdslots kunnen blokkeren zodat er niet geprint kan worden, bijvoorbeeld tijdens pauzes.
+Een maandoverzicht van alle printafspraken.
+Een weekoverzicht van alle printafspraken.
+Een dagoverzicht van alle gemaakte printafspraken.
+Per afspraak een prijs voor de print kunnen invoeren.
+Kunnen inloggen in de admin omgeving van de afsprakenplanner
+
+
+Kunnen zien welke tijdslots beschikbaar zijn en welke niet.
+Afspraken kunnen maken op een beschikbaar tijdslot.
+Kunnen kiezen uit verschillende soorten printafspraken .
+Een gemaakte printafspraak kunnen wijzigen
+Een gemaakte printafspraak kunnen annuleren 

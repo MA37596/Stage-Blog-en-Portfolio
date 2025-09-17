@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LuckyBet - Alle Spellen</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">LuckyBet</div>
+        <nav>
+            <ul>
+                <li><a href="casino.html">Home</a></li>
+                <li><a href="games.html" class="active">Spellen</a></li>
+                <li><a href="#promotions">Promoties</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="login-btn">Inloggen</button>
+            <button class="register-btn">Registreren</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="games-header">
+            <h1>Ontdek Onze Spellen</h1>
+            <p>Kies uit ons uitgebreide aanbod van spannende spellen</p>
+            <div class="search-filter">
+                <input type="text" placeholder="Zoek een spel...">
+                <select>
+                    <option value="">Alle Categorieën</option>
+                    <option value="slots">Gokkasten</option>
+                    <option value="table">Tafelspellen</option>
+                    <option value="live">Live Casino</option>
+                    <option value="other">Overige</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="games-grid">
+            <div class="games-container">
+                <!-- Tafelspellen -->
+                <div class="game-card" data-game="blackjack">
+                    <div class="game-icon">♠️</div>
+                    <h3>Blackjack</h3>
+                    <p>Test je geluk tegen de dealer</p>
+                    <div class="game-stats">
+                        <span>🎯 98% RTP</span>
+                        <span>⭐ 4.8/5</span>
+                    </div>
+                    <button class="play-button">Speel Nu</button>
+                </div>
+
+                <div class="game-card" data-game="poker">
+                    <div class="game-icon">🃏</div>
+                    <h3>Poker</h3>
+                    <p>Laat je pokerface zien</p>
+                    <div class="game-stats">
+                        <span>🎯 97% RTP</span>
+                        <span>⭐ 4.7/5</span>
+                    </div>
+                    <button class="play-button">Speel Nu</button>
+                </div>
+
+                <div class="game-card" data-game="roulette">
+                    <div class="game-icon">🎲</div>
+                    <h3>Roulette</h3>
+                    <p>Draai aan het rad van fortuin</p>
+                    <div class="game-stats">
+                        <span>🎯 97% RTP</span>
+                        <span>⭐ 4.7/5</span>
+                    </div>
+                    <button class="play-button">Speel Nu</button>
+                </div>
+
+                <div class="game-card" data-game="baccarat">
+                    <div class="game-icon">🎴</div>
+                    <h3>Baccarat</h3>
+                    <p>Het favoriete spel van James Bond</p>
+                    <div class="game-stats">
+                        <span>🎯 98% RTP</span>
+                        <span>⭐ 4.6/5</span>
+                    </div>
+                    <button class="play-button">Speel Nu</button>
+                </div>
+
+                <!-- Gokkasten -->
+                <div class="game-card" data-game="slots">
+                    <div class="game-icon">🎰</div>
+                    <h3>Gokkasten</h3>
+                    <p>Draai aan de rollen voor grote prijzen</p>
+                    <div class="game-stats">
+                        <span>🎯 96% RTP</span>
+                        <span>⭐ 4.9/5</span>
+                    </div>
+                    <button class="play-button">Speel Nu</button>
+                </div>
+
+                <div class="game-card" data-game="mega-fortune">
+                    <div class="game-icon">💰</div>
+                    <h3>Mega Fortune</h3>
+                    <p>Win de jackpot van je leven</p>
+                    <div class="game-stats">
+                        <span>🎯 96% RTP</span>
+                        <span>⭐ 4.8/5</span>
+                    </div>
+                    <button class="play-button">Speel Nu</button>
+                </div>
+
+                <!-- Live Casino -->
+                <div class="game-card" data-game="live-blackjack">
+                    <div class="game-icon">🎥</div>
+                    <h3>Live Blackjack</h3>
+                    <p>Speel met echte dealers</p>
+                    <div class="game-stats">
+                        <span>🎯 98% RTP</span>
+                        <span>⭐ 4.9/5</span>
+                    </div>
+                    <button class="play-button">Speel Nu</button>
+                </div>
+
+                <div class="game-card" data-game="live-roulette">
+                    <div class="game-icon">🎥</div>
+                    <h3>Live Roulette</h3>
+                    <p>Echte casino ervaring</p>
+                    <div class="game-stats">
+                        <span>🎯 97% RTP</span>
+                        <span>⭐ 4.8/5</span>
+                    </div>
+                    <button class="play-button">Speel Nu</button>
+                </div>
+
+                <!-- Overige Spellen -->
+                <div class="game-card" data-game="plink">
+                    <div class="game-icon">🎯</div>
+                    <h3>Plink</h3>
+                    <p>Laat vallen en win</p>
+                    <div class="game-stats">
+                        <span>🎯 95% RTP</span>
+                        <span>⭐ 4.5/5</span>
+                    </div>
+                    <button class="play-button">Speel Nu</button>
+                </div>
+
+                <div class="game-card" data-game="mines">
+                    <div class="game-icon">💣</div>
+                    <h3>Mijnen</h3>
+                    <p>Vind de schat, vermijd de mijnen</p>
+                    <div class="game-stats">
+                        <span>🎯 96% RTP</span>
+                        <span>⭐ 4.6/5</span>
+                    </div>
+                    <button class="play-button">Speel Nu</button>
+                </div>
+
+                <div class="game-card" data-game="craps">
+                    <div class="game-icon">🎲</div>
+                    <h3>Craps</h3>
+                    <p>Gooi de dobbelstenen voor spanning</p>
+                    <div class="game-stats">
+                        <span>🎯 98% RTP</span>
+                        <span>⭐ 4.7/5</span>
+                    </div>
+                    <button class="play-button">Speel Nu</button>
+                </div>
+
+                <div class="game-card" data-game="keno">
+                    <div class="game-icon">🎱</div>
+                    <h3>Keno</h3>
+                    <p>Kies je nummers en win</p>
+                    <div class="game-stats">
+                        <span>🎯 95% RTP</span>
+                        <span>⭐ 4.4/5</span>
+                    </div>
+                    <button class="play-button">Speel Nu</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Over LuckyBet</h3>
+                <p>Jouw vertrouwde online casino sinds 2024</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: support@luckybet.nl</p>
+                <p>Telefoon: +31 20 123 4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Volg Ons</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 LuckyBet. Alle rechten voorbehouden.</p>
+            <p>Speel met mate. 18+ alleen.</p>
+            <div class="payment-methods">
+                <span>💳</span>
+                <span>🏦</span>
+                <span>💰</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

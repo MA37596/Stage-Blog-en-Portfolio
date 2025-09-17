@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 2rem;
+    font-family: sans-serif;
+    background: black;
+    padding: 7rem;
+}
+
+.cards {
+    height: 85vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100%;
+    grid-template-rows: repeat(12, 1fr);
+    gap: 3rem;
+
+}
+
+.card {
+    list-style: none;
+    background-color: yellow;
+    border-radius: 3rem;
+    box-shadow: 0 2rem 5rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.card--first {
+    grid-column: 1/5;
+    grid-row: 1/7;
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.card--first > input{
+    width: 70%;
+    height: 4rem;
+    font-size: 2rem;
+    font-family: sans-serif;
+    padding-left: 2rem;
+}
+
+.card--second {
+    grid-column: 5/13;
+    grid-row: 1/9;
+}
+
+.card--third {
+    grid-row: 7/13;
+    grid-column: 2/5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 7rem;
+}
+
+.card--third>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card--third>button {
+    width: 15rem;
+    height: 6rem;
+    font-size: 2rem;
+    font-family: sans-serif;
+    border: none;
+    background: #ee1515;
+    color: #F8F6E3;
+    border-radius: 0.5rem;
+}
+@media screen and (max-width: 87.5rem) {
+    body {
+        background: #6AD4DD;
+    }
+
+    .card--third {
+        grid-column: 1/5;
+    }
+
+    .card--second {
+        grid-row: 1/13;
+    }
+}
+
+@media screen and (max-width: 62.5rem) {
+    body {
+        background: #7AA2E3;
+    }
+
+    .card--first,
+    .card--second {
+        display: none;
+    }
+
+    .card--third {
+        grid-row: 3 / 11;
+        grid-column: 3 / 11;
+    }
+}
