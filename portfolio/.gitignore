@@ -10,6 +10,10 @@
 !.yarn/releases
 !.yarn/versions
 
+
+wachtwoord.txt
+
+
 # testing
 /coverage
 
