@@ -101,19 +101,19 @@ export default function HomePage() {
           {/*    <div className={`w-6 h-6 transform rotate-45 transition-colors duration-300 ${
             isDarkMode ? 'bg-white' : 'bg-gray-900'
           }`}></div>*/}
-          <span className="text-xl font-bold">Portfolio Rayan</span>
+          <span className="text-xl font-bold">Rayan Aghmer</span>
         </div>
         
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="#" className={`hover:opacity-70 transition-opacity ${
+          <a href="/projecten" className={`hover:opacity-70 transition-opacity ${
             isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'
           }`}>Projecten</a>
           <a href="/certificaten" className={`hover:opacity-70 transition-opacity ${
             isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'
-          }`}>Certificaten</a>
+          }`}>Certificaten</a>    
           <a href="#" className={`hover:opacity-70 transition-opacity ${
             isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'
-          }`}>Blog</a>
+          }`}>Contact</a>  
         </nav>
 
         <div className="flex items-center space-x-2">
@@ -364,7 +364,6 @@ export default function HomePage() {
               Neem Contact Op
             </button>
           </div>
-
           <div className="flex items-center justify-center text-gray-400">
             <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />

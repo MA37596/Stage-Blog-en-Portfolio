@@ -21,7 +21,7 @@ export default function Custom404() {
         href="/"
         className="mt-6 text-green-200 border border-green-500 px-4 py-2 rounded hover:bg-green-500 hover:text-black transition"
       >
-        RETURN TO Main Page 
+        RETURN 
       </a>
     </div>
   );
