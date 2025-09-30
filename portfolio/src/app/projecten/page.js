@@ -1,15 +1,17 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 
 const projectenData = [
+  // Hier al jouw projecten in dezelfde volgorde en data
   {
     id: 1,
     title: 'Game Website - Casino site',
     description:
       'Moderne portfolio website gebouwd met Next.js en Tailwind CSS, responsive design en smooth scrolling.',
     tags: ['PHP', 'CSS', 'JS'],
-    categoryColor: 'PHP',
+    categoryColor: 'blue',
     url: 'https://github.com/rayanaghmer/portfolio',
     bgGradientFrom: 'from-blue-600',
     bgGradientTo: 'to-blue-800',
@@ -22,7 +24,7 @@ const projectenData = [
       'Capture The Flag met tools als Nmap, John The Ripper, Nikto en brute force scripting.',
     tags: ['Cybersecurity', 'Penetration Testing'],
     categoryColor: 'green',
-    url: '',
+    url: '', // geen url
     bgGradientFrom: 'from-green-600',
     bgGradientTo: 'to-green-800',
     image: '/capturetheflag.jpg',
@@ -108,7 +110,8 @@ const projectenData = [
   {
     id: 10,
     title: 'Fancy Card',
-    description: 'Een interactieve kaartcomponent waarbij verschillende informatiekaarten overzichtelijk en visueel aantrekkelijk worden getoond. Ideaal voor nieuws, productinformatie of blogoverzicht. Gebouwd met HTML, CSS en JavaScript voor een moderne look.',
+    description:
+      'Een interactieve kaartcomponent waarbij verschillende informatiekaarten overzichtelijk en visueel aantrekkelijk worden getoond. Ideaal voor nieuws, productinformatie of blogoverzicht. Gebouwd met HTML, CSS en JavaScript voor een moderne look.',
     tags: ['HTML', 'CSS', 'JavaScript'],
     categoryColor: 'blue',
     url: 'http://193.233.19.222/fancycard/',
@@ -119,7 +122,8 @@ const projectenData = [
   {
     id: 11,
     title: 'Landingspage',
-    description: 'Een strakke en functionele landingspagina met een duidelijke call-to-action en contactmogelijkheden. Geeft bezoekers direct inzicht en nodigt uit om verder te klikken. Samen gesteld uit HTML, CSS en JavaScript met aandacht voor snelheid en conversie.',
+    description:
+      'Een strakke en functionele landingspagina met een duidelijke call-to-action en contactmogelijkheden. Geeft bezoekers direct inzicht en nodigt uit om verder te klikken. Samen gesteld uit HTML, CSS en JavaScript met aandacht voor snelheid en conversie.',
     tags: ['HTML', 'CSS', 'JavaScript'],
     categoryColor: 'red',
     url: '#',
@@ -130,7 +134,8 @@ const projectenData = [
   {
     id: 12,
     title: 'Accountancy',
-    description: 'Een strakke en functionele landingspagina met een duidelijke call-to-action en contactmogelijkheden. Geeft bezoekers direct inzicht en nodigt uit om verder te klikken. Samen gesteld uit HTML, CSS en JavaScript met aandacht voor snelheid en conversie.',
+    description:
+      'Een strakke en functionele landingspagina met een duidelijke call-to-action en contactmogelijkheden. Geeft bezoekers direct inzicht en nodigt uit om verder te klikken. Samen gesteld uit HTML, CSS en JavaScript met aandacht voor snelheid en conversie.',
     tags: ['HTML', 'Scss', 'JavaScript'],
     categoryColor: 'teal',
     url: '#',
@@ -141,7 +146,8 @@ const projectenData = [
   {
     id: 13,
     title: 'Grid',
-    description: 'Illustratie en demonstratie van CSS Grid, waarmee geavanceerde lay-outs eenvoudig gemaakt kunnen worden. Hier leer je hoe je rasters en complexe webpagina-structuren opzet met CSS Grid.',
+    description:
+      'Illustratie en demonstratie van CSS Grid, waarmee geavanceerde lay-outs eenvoudig gemaakt kunnen worden. Hier leer je hoe je rasters en complexe webpagina-structuren opzet met CSS Grid.',
     tags: ['CSS'],
     categoryColor: 'green',
     url: 'http://193.233.19.222/grid/',
@@ -152,8 +158,9 @@ const projectenData = [
   {
     id: 14,
     title: 'Pokemon',
-    description: 'Een kleurrijk en speels project waarin Pokémon-stijl en branding centraal staan. Dit voorbeeld is visueel gebaseerd op iconische Pokémon graphics en maakt gebruik van HTML, CSS en JavaScript voor diverse animaties en interacties.',
-    tags: ['HTML', 'CSS','JavaScript'],
+    description:
+      'Een kleurrijk en speels project waarin Pokémon-stijl en branding centraal staan. Dit voorbeeld is visueel gebaseerd op iconische Pokémon graphics en maakt gebruik van HTML, CSS en JavaScript voor diverse animaties en interacties.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
     categoryColor: 'purple',
     url: '#',
     bgGradientFrom: 'from-purple-600',
@@ -163,8 +170,9 @@ const projectenData = [
   {
     id: 15,
     title: 'Color Game',
-    description: 'Een spel (of functionaliteit) waarbij kleurherkenning en snelle interactie centraal staan. Gebruikers kiezen of herkennen kleuren, wat zorgt voor een leuke en leerzame ervaring gebouwd met HTML, CSS en JavaScript.',
-    tags: ['HTML', 'CSS','JavaScript'],
+    description:
+      'Een spel (of functionaliteit) waarbij kleurherkenning en snelle interactie centraal staan. Gebruikers kiezen of herkennen kleuren, wat zorgt voor een leuke en leerzame ervaring gebouwd met HTML, CSS en JavaScript.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
     categoryColor: 'blue',
     url: 'http://193.233.19.222/html/',
     bgGradientFrom: 'from-blue-600',
@@ -233,34 +241,34 @@ export default function ProjectenPage() {
         }`}
       >
         <div className="flex items-center space-x-4">
-          <a href="/" className="text-xl font-bold hover:underline">
+          <Link href="/" className="text-xl font-bold hover:underline">
             Rayan Aghmer
-          </a>
+          </Link>
           <nav className="hidden md:flex items-center space-x-6">
-            <a
+            <Link
               href="/projecten"
               className={`hover:opacity-70 transition-opacity ${
                 isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'
               }`}
             >
               Projecten
-            </a>
-            <a
+            </Link>
+            <Link
               href="/certificaten"
               className={`hover:opacity-70 transition-opacity ${
                 isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'
               }`}
             >
               Certificaten
-            </a>
-            <a
+            </Link>
+            <Link
               href="/contact"
               className={`hover:opacity-70 transition-opacity ${
                 isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'
               }`}
             >
               Contact
-            </a>
+            </Link>
           </nav>
         </div>
         <button
@@ -287,6 +295,7 @@ export default function ProjectenPage() {
           )}
         </button>
       </header>
+
 
       {/* Filter Buttons */}
       <section className="max-w-7xl mx-auto px-6 py-6">
@@ -330,6 +339,7 @@ export default function ProjectenPage() {
           )}
         </div>
       </section>
+
 
       {/* Project Cards */}
       <main className="max-w-7xl mx-auto px-6 py-12">

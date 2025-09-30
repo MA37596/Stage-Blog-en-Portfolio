@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function StageBedrijfForm() {
   const [formData, setFormData] = useState({
@@ -140,8 +141,11 @@ export default function StageBedrijfForm() {
         color: '#6a0dad',
         fontWeight: '600'
       }}>{message}</p>}
-      <button
+
+      <Link
+        href="/"
         style={{
+          display: 'inline-block',
           width: '100%',
           padding: '11px',
           backgroundColor: '#ece7fa',
@@ -149,13 +153,13 @@ export default function StageBedrijfForm() {
           fontWeight: '700',
           fontSize: '15px',
           borderRadius: '8px',
-          border: 'none',
+          textAlign: 'center',
           cursor: 'pointer',
+          textDecoration: 'none',
         }}
-        onClick={() => window.location.href='/'} // pas aan naar jouw portfolio pagina
       >
         Terug naar portfolio
-      </button>
+      </Link>
     </div>
   );
 }
