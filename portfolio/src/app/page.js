@@ -77,8 +77,6 @@ export default function HomePage() {
       expertise: "Met zowel ervaring in web development als cybersecurity en app Design",
       zieMeer: "Zie meer",
       neemContact: "Neem Contact Op",
-      aboutMeTitle: "About Me",
-      aboutMeText: "Mijn naam is Rayan Aghmer en ik ben een web developer en app designer. Ik heb een passie voor het ontwikkelen van websites en apps en ik hou me graag op de hoogte van de laatste trends in deze vakken.",
       mijnWerk: "Mijn Werk",
       project1: "Een moderne portfolio website gebouwd met Next.js en Tailwind CSS, met responsive design en smooth scrolling.",
       project2: "Een Capture The Flag-opdracht voor het vak Security, waarin ik kennis maakte met tools zoals Nmap, John The Ripper, Nikto en een zelfgeschreven bruteforce-script",
@@ -120,7 +118,6 @@ export default function HomePage() {
       expertise: "With experience in web development, cybersecurity and app Design",
       zieMeer: "See more",
       neemContact: "Contact Me",
-      aboutMeTitle: "About Me",
       aboutMeText: "My name is Rayan Aghmer and I am a web developer and app designer. I am passionate about developing websites and apps and I love to keep up with the latest trends in these fields.",
       mijnWerk: "My Work",
       project1: "A modern portfolio website built with Next.js and Tailwind CSS, featuring responsive design and smooth scrolling.",
@@ -348,20 +345,6 @@ export default function HomePage() {
             {t.aboutMeText}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <button
-              onClick={() =>
-                document
-                  .getElementById('werk-sectie')
-                  .scrollIntoView({ behavior: 'smooth' })
-              }
-              className={`border px-8 py-4 rounded-lg font-medium transition-all duration-300 ${
-                isDarkMode
-                  ? 'bg-transparent border-white text-white hover:bg-white hover:text-black'
-                  : 'bg-transparent border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'
-              }`}
-            >
-              {t.zieMeer}
-            </button>
           </div>
         </div>
       </section>
