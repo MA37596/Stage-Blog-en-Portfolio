@@ -76,7 +76,6 @@ export default function HomePage() {
       welkom: "Mijn portfolio met alle opdrachten, certificaten en projecten.",
       expertise: "Met zowel ervaring in web development als cybersecurity en app Design",
       zieMeer: "Zie meer",
-      neemContact: "Neem Contact Op",
       mijnWerk: "Mijn Werk",
       project1: "Een moderne portfolio website gebouwd met Next.js en Tailwind CSS, met responsive design en smooth scrolling.",
       project2: "Een Capture The Flag-opdracht voor het vak Security, waarin ik kennis maakte met tools zoals Nmap, John The Ripper, Nikto en een zelfgeschreven bruteforce-script",
@@ -118,7 +117,6 @@ export default function HomePage() {
       expertise: "With experience in web development, cybersecurity and app Design",
       zieMeer: "See more",
       neemContact: "Contact Me",
-      aboutMeText: "My name is Rayan Aghmer and I am a web developer and app designer. I am passionate about developing websites and apps and I love to keep up with the latest trends in these fields.",
       mijnWerk: "My Work",
       project1: "A modern portfolio website built with Next.js and Tailwind CSS, featuring responsive design and smooth scrolling.",
       project2: "Capture The Flag challenge for Security, where I learned about tools such as Nmap, John The Ripper, Nikto and a custom bruteforce scripts.",
@@ -305,15 +303,6 @@ export default function HomePage() {
               }`}
             >
               {t.zieMeer}
-            </button>
-            <button
-              className={`px-8 py-4 rounded-lg font-medium transition-all duration-300 ${
-                isDarkMode
-                  ? 'bg-transparent text-white hover:bg-gray-800'
-                  : 'bg-transparent text-gray-900 hover:bg-gray-200'
-              }`}
-            >
-              {t.neemContact}
             </button>
           </div>
           <div className="flex items-center justify-center text-gray-400">

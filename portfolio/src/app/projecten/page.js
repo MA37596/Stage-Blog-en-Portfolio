@@ -6,24 +6,26 @@ const projectenData = [
   {
     id: 1,
     title: 'Game Website - Casino site',
-    description: 'Moderne portfolio website gebouwd met Next.js en Tailwind CSS, responsive design en smooth scrolling.',
+    description:
+      'Moderne portfolio website gebouwd met Next.js en Tailwind CSS, responsive design en smooth scrolling.',
     tags: ['PHP', 'CSS', 'JS'],
     categoryColor: 'PHP',
     url: 'https://github.com/rayanaghmer/portfolio',
     bgGradientFrom: 'from-blue-600',
     bgGradientTo: 'to-blue-800',
-    image: '/casino.jpeg'
+    image: '/casino.jpeg',
   },
   {
     id: 2,
     title: 'Pentesting - Mr Robot Capture The Flag',
-    description: 'Capture The Flag met tools als Nmap, John The Ripper, Nikto en brute force scripting.',
+    description:
+      'Capture The Flag met tools als Nmap, John The Ripper, Nikto en brute force scripting.',
     tags: ['Cybersecurity', 'Penetration Testing'],
     categoryColor: 'green',
     url: '#',
     bgGradientFrom: 'from-green-600',
     bgGradientTo: 'to-green-800',
-    image: '/capturetheflag.jpg'
+    image: '/capturetheflag.jpg',
   },
   {
     id: 3,
@@ -33,7 +35,8 @@ const projectenData = [
     categoryColor: 'purple',
     url: 'https://www.figma.com/file/example/mobile-app-design',
     bgGradientFrom: 'from-purple-600',
-    bgGradientTo: 'to-purple-800'
+    bgGradientTo: 'to-purple-800',
+    image: '/mobileappdesign.jpg',
   },
   {
     id: 4,
@@ -43,7 +46,8 @@ const projectenData = [
     categoryColor: 'orange',
     url: 'https://github.com/rayanaghmer/ecommerce-platform',
     bgGradientFrom: 'from-orange-600',
-    bgGradientTo: 'to-orange-800'
+    bgGradientTo: 'to-orange-800',
+    image: '/apple.png',
   },
   {
     id: 5,
@@ -53,27 +57,31 @@ const projectenData = [
     categoryColor: 'red',
     url: 'https://github.com/rayanaghmer/',
     bgGradientFrom: 'from-red-600',
-    bgGradientTo: 'to-red-800'
+    bgGradientTo: 'to-red-800',
+    image: '/printplanner.png',
   },
   {
     id: 6,
     title: 'React - About Me Site',
-    description: 'Persoonlijke site gebouwd in React met top 10 albums en cookie-clicker game.',
+    description:
+      'Persoonlijke site gebouwd in React met top 10 albums en cookie-clicker game.',
     tags: ['React', 'Tailwind'],
     categoryColor: 'teal',
     url: 'https://github.com/rayanaghmer/',
     bgGradientFrom: 'from-teal-600',
-    bgGradientTo: 'to-teal-800'
+    bgGradientTo: 'to-teal-800',
+    image: '/react.jpg',
   },
   {
     id: 7,
     title: 'Cookie Clicker ',
     description: 'Simpele Cookie Clicker met verschillende functies',
-    tags: ['HTML', 'CSS', 'Javascript'],
+    tags: ['HTML', 'CSS', 'JavaScript'],
     categoryColor: 'blue',
     url: '#',
     bgGradientFrom: 'from-blue-600',
-    bgGradientTo: 'to-blue-800'
+    bgGradientTo: 'to-blue-800',
+    image: '/cookierclicker.webp',
   },
   {
     id: 8,
@@ -83,78 +91,86 @@ const projectenData = [
     categoryColor: 'orange',
     url: '#',
     bgGradientFrom: 'from-orange-600',
-    bgGradientTo: 'to-orange-800'
+    bgGradientTo: 'to-orange-800',
+    image: '/modal.png',
   },
   {
     id: 9,
     title: 'BEM',
     description: 'Een portfolio-opdracht die bedoeld is om de basisprincipes van BEM te demonstreren.',
-    tags: ['Flutter', 'UI/UX'],
+    tags: ['CSS'],
     categoryColor: 'purple',
     url: '#',
     bgGradientFrom: 'from-purple-600',
-    bgGradientTo: 'to-purple-800'
+    bgGradientTo: 'to-purple-800',
+    image: '/bem.svg',
   },
   {
     id: 10,
-    title: '',
+    title: 'Fancy Card',
     description: 'Beschrijving project 10',
-    tags: ['Next.js', 'Tailwind'],
+    tags: ['HTML', 'CSS', 'JavaScript'],
     categoryColor: 'blue',
     url: '#',
     bgGradientFrom: 'from-blue-600',
-    bgGradientTo: 'to-blue-800'
+    bgGradientTo: 'to-blue-800',
+    image: '/fancycard.webp',
   },
   {
     id: 11,
-    title: '',
+    title: 'Landingspage',
     description: 'Beschrijving project 11',
-    tags: ['PHP', 'SQL'],
+    tags: ['HTML', 'CSS', 'JavaScript'],
     categoryColor: 'red',
     url: '#',
     bgGradientFrom: 'from-red-600',
-    bgGradientTo: 'to-red-800'
+    bgGradientTo: 'to-red-800',
+    image: '/landingpage.png',
   },
   {
     id: 12,
-    title: '',
+    title: 'Accountancy',
     description: 'Beschrijving project 12',
-    tags: ['JavaScript', 'React'],
+    tags: ['HTML', 'Scss', 'JavaScript'],
     categoryColor: 'teal',
     url: '#',
     bgGradientFrom: 'from-teal-600',
-    bgGradientTo: 'to-teal-800'
+    bgGradientTo: 'to-teal-800',
+    image: '/accountancy.webp',
   },
   {
     id: 13,
-    title: '',
+    title: 'Grid',
     description: 'Beschrijving project 13',
     tags: ['Cybersecurity'],
     categoryColor: 'green',
     url: '#',
     bgGradientFrom: 'from-green-600',
-    bgGradientTo: 'to-green-800'
+    bgGradientTo: 'to-green-800',
+    image: '/cssgrid.png',
   },
   {
     id: 14,
-    title: '',
+    title: 'Pokemon',
     description: 'Beschrijving project 14',
     tags: ['Figma', 'UI/UX'],
     categoryColor: 'purple',
     url: '#',
     bgGradientFrom: 'from-purple-600',
-    bgGradientTo: 'to-purple-800'
+    bgGradientTo: 'to-purple-800',
+    image: '/pokemon.png',
   },
   {
     id: 15,
-    title: '',
+    title: 'Color Game',
     description: 'Beschrijving project 15',
     tags: ['React', 'Tailwind'],
     categoryColor: 'blue',
     url: '#',
     bgGradientFrom: 'from-blue-600',
-    bgGradientTo: 'to-blue-800'
-  }
+    bgGradientTo: 'to-blue-800',
+    image: '/colorgame.jpg',
+  },
 ]
 
 const filterOptions = [
@@ -171,7 +187,7 @@ const filterOptions = [
   'Tailwind',
   'UI/UX',
   'Penetration Testing',
-  'Kali Linux'
+  'Kali Linux',
 ]
 
 export default function ProjectenPage() {
@@ -210,19 +226,54 @@ export default function ProjectenPage() {
         isDarkMode ? 'bg-slate-900 text-white' : 'bg-gray-50 text-gray-900'
       }`}
     >
-      <header className="flex items-center justify-between px-6 py-4 border-b border-gray-700">
-        <h1 className="text-3xl font-bold">Projecten</h1>
+      {/* Navigation Bar */}
+      <header
+        className={`flex items-center justify-between px-6 py-4 ${
+          isDarkMode ? 'bg-slate-900' : 'bg-white'
+        }`}
+      >
+        <div className="flex items-center space-x-4">
+          <a href="/" className="text-xl font-bold hover:underline">
+            Rayan Aghmer
+          </a>
+          <nav className="hidden md:flex items-center space-x-6">
+            <a
+              href="/projecten"
+              className={`hover:opacity-70 transition-opacity ${
+                isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'
+              }`}
+            >
+              Projecten
+            </a>
+            <a
+              href="/certificaten"
+              className={`hover:opacity-70 transition-opacity ${
+                isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'
+              }`}
+            >
+              Certificaten
+            </a>
+            <a
+              href="/contact"
+              className={`hover:opacity-70 transition-opacity ${
+                isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'
+              }`}
+            >
+              Contact
+            </a>
+          </nav>
+        </div>
         <button
           onClick={toggleTheme}
-          className={`p-2 rounded-lg transition-colors duration-300 ${
+          className={`p-2 rounded-lg transition-all duration-300 ${
             isDarkMode
-              ? 'bg-gray-800 text-yellow-400 hover:bg-gray-700'
-              : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              ? 'bg-gray-800 hover:bg-gray-700 text-yellow-400'
+              : 'bg-gray-200 hover:bg-gray-300 text-gray-600'
           }`}
           aria-label="Toggle theme"
         >
           {isDarkMode ? (
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path
                 fillRule="evenodd"
                 d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
@@ -230,7 +281,7 @@ export default function ProjectenPage() {
               />
             </svg>
           ) : (
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
             </svg>
           )}
@@ -308,19 +359,11 @@ export default function ProjectenPage() {
                   className={`w-full h-48 rounded-lg mb-4 overflow-hidden relative bg-gradient-to-br ${proj.bgGradientFrom} ${proj.bgGradientTo} flex items-center justify-center`}
                 >
                   {proj.image ? (
-                    <>
-                      <img
-                        src={proj.image}
-                        alt={proj.title}
-                        className="w-full h-full object-cover rounded-lg"
-                      />
-                      <div className="absolute inset-0 bg-black/30 flex items-center justify-center rounded-lg">
-                        <span className="text-white font-semibold text-lg bg-green-700 px-4 py-2 rounded-lg">
-                          {proj.categoryColor.charAt(0).toUpperCase() +
-                            proj.categoryColor.slice(1)}
-                        </span>
-                      </div>
-                    </>
+                    <img
+                      src={proj.image}
+                      alt={proj.title}
+                      className="w-full h-full object-cover rounded-lg"
+                    />
                   ) : (
                     <span className="text-white font-semibold text-lg">
                       {proj.categoryColor.charAt(0).toUpperCase() +
