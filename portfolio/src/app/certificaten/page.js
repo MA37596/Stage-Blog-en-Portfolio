@@ -388,9 +388,9 @@ export default function CertificatenPage() {
                 : 'bg-gradient-to-br from-green-100/50 to-slate-100/50 border border-green-300/30 hover:border-green-400/50'
             }`}>
               <div className="w-full h-48 bg-gradient-to-br from-green-600 to-green-800 rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-white font-semibold text-lg">Cybersecurity</span>
+                <span className="text-white font-semibold text-lg">CyberSecurity</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Security Fundamentals</h3>
+              <h3 className="text-xl font-semibold mb-2">Introduction To CyberSecurity</h3>
               <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                 Certificaat voor cybersecurity fundamentals inclusief penetration testing, vulnerability assessment en security best practices.
               </p>
@@ -420,28 +420,28 @@ export default function CertificatenPage() {
                 : 'bg-gradient-to-br from-purple-100/50 to-slate-100/50 border border-purple-300/30 hover:border-purple-400/50'
             }`}>
               <div className="w-full h-48 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-white font-semibold text-lg">App Design</span>
+                <span className="text-white font-semibold text-lg">CyberSecurity</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">UI/UX Design Certificaat</h3>
+              <h3 className="text-xl font-semibold mb-2">Cybersecurity Fundamentals</h3>
               <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                Certificaat voor UI/UX design met focus op user experience, wireframing, prototyping en design thinking methodologieën.
+              Cybersecurity fundamentals omvatten de basisprincipes en praktijken die organisaties en individuen helpen hun systemen, netwerken en data te beveiligen tegen aanvallen en onbevoegde toegang.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className={`px-3 py-1 rounded-full text-sm ${
                   isDarkMode 
                     ? 'bg-purple-600/20 text-purple-300' 
                     : 'bg-purple-100 text-purple-800'
-                }`}>Figma</span>
+                }`}>Nmap</span>
                 <span className={`px-3 py-1 rounded-full text-sm ${
                   isDarkMode 
                     ? 'bg-purple-600/20 text-purple-300' 
                     : 'bg-purple-100 text-purple-800'
-                }`}>Prototyping</span>
+                }`}>John The Ripper</span>
                 <span className={`px-3 py-1 rounded-full text-sm ${
                   isDarkMode 
                     ? 'bg-purple-600/20 text-purple-300' 
                     : 'bg-purple-100 text-purple-800'
-                }`}>Design Thinking</span>
+                }`}>WireShark</span>
               </div>
             </div>
           </div>
