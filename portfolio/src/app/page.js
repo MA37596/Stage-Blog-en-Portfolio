@@ -5,23 +5,14 @@ import { useState, useEffect } from 'react'
 export default function HomePage() {
   const [isDarkMode, setIsDarkMode] = useState(true)
   const [gradientColors, setGradientColors] = useState({
-    dark: {
-      from: 'slate-900',
-      via: 'blue-900',
-      to: 'slate-900',
-    },
-    light: {
-      from: 'blue-50',
-      via: 'blue-100',
-      to: 'slate-50',
-    },
+    dark: { from: 'slate-900', via: 'blue-900', to: 'slate-900' },
+    light: { from: 'blue-50', via: 'blue-100', to: 'slate-50' },
   })
   const [isEnglish, setIsEnglish] = useState(false)
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
     if (savedTheme) setIsDarkMode(savedTheme === 'dark')
-
     const savedGradients = localStorage.getItem('gradientColors')
     if (savedGradients) setGradientColors(JSON.parse(savedGradients))
   }, [])
@@ -71,44 +62,45 @@ export default function HomePage() {
       certificaten: 'Certificaten',
       contact: 'Contact',
       welkom: 'Mijn portfolio met alle opdrachten, certificaten en projecten.',
-      expertise:
-        'Met zowel ervaring in web development als cybersecurity en app Design',
+      expertise: 'Met zowel ervaring in web development als cybersecurity en app Design',
       zieMeer: 'Zie meer',
       mijnWerk: 'Mijn Werk',
-      project1:
-      'Een dynamische en interactieve casino website, gebouwd met PHP voor server-side logica, CSS voor een aantrekkelijke en gebruiksvriendelijke stijl, en JavaScript voor interactieve spellen en functies. Deze site biedt spelers een veilige en vloeiende ervaring met diverse casinospellen, responsive design en snelle reacties, zodat zowel desktop- als mobiele gebruikers optimaal plezier beleven',
-      project2:
-        'Een Capture The Flag-opdracht voor het vak Security, waarin ik kennis maakte met tools zoals Nmap, John The Ripper, Nikto en een zelfgeschreven bruteforce-script',
-      project3:
-        'Een gamified buurtapp waarin bewoners punten verdienen door activiteiten voor de wijk te doen en deze kunnen inwisselen voor kortingen bij lokale winkels.',
-      project4: 'Een functionele en responsive e-commerce website gericht op Apple-producten, gebouwd met HTML, CSS en JavaScript. De site biedt gebruikers een overzichtelijke winkelervaring met productpagina’s, een intuïtieve interface en snelle navigatie, waarbij moderne webtechnologieën zorgen voor optimale prestaties en gebruiksvriendelijkheid.',
-      project6:
-        'Een moderne, responsieve persoonlijke website gebouwd met React en gestyled met Tailwind CSS. De site bevat een overzichtelijke en aantrekkelijke presentatie van jouw profiel, vaardigheden en projecten, met soepele animaties en een strak ontwerp dat optimaal werkt op alle apparaten',
+      aboutTitle: 'Over mij',
+      aboutDescription1:
+        'Hallo! Ik ben Rayan Aghmer, een full-stack webontwikkelaar gespecialiseerd in HTML, CSS, PHP en JavaScript. Ik creëer mooie, performante en veilige applicaties. Mijn doel is om te specialiseren in CyberSecurity en ik hoop ook dat ik dit bij een stagebedrijf kan behalen.',
+      aboutDescription2:
+        'Ik heb ervaring met CTF-Opdrachten in cybersecurity, web development en app design. Verder ben ik leergierig en werk ik graag aan uitdagende projecten.',
+      skillsTitle: 'Vaardigheden',
+      skills: ['HTML', 'CSS', 'Beginner JavaScript', 'PHP', 'MySQL', 'JSON', 'Kali Linux','Bash Scripts'],
+      workTitle: 'Werkervaring',
+      work1:
+      'Reparatiemedewerker - Computerglobe 2021 tot 2024: Herstellen van mobiele apparaten, Verwijderen van virussen en het herstellen van data op hardeschijven',
+      work2:
+      'Zelfstandig - Fullstack Developer - 2022 tot heden: ontwikkeling van interne en externe webapplicaties.',
+      interestsTitle: 'Dingen die ik interessant vind',
+      interestsDescription:
+        'Hier vind je video’s over web technologieën, cybersecurity en design die mij inspireren.',
+      youtubeVideoUrls: [
+        'https://www.youtube.com/embed/BGsw_l0tT10?start=253&pp=ygUUYW50aG9ueSB2YW4gZGVyIG1lZXI%3D',
+        'https://www.youtube.com/embed/cFGAAeTTmXM?list=PL_NnG4jzzKogm7HiP3Etlpwy2MKZGFwxO',
+      ],
+      downloadCV: 'Download mijn CV',
       casino: 'Casino site',
-      mrRobot: 'Mr Robot Capture The Flag',
-      mobileApp: 'Mobile App UI/UX',
-      ecommerce: 'E-commerce Website',
-      afsprakenplanner: 'Simpele Afsprakenplanner',
-      aboutSite: 'About Me Site',
+      project1:
+        'Een dynamische en interactieve casino website, gebouwd met PHP voor server-side logica, CSS voor een aantrekkelijke stijl, en JavaScript voor interactieve spellen.',
+      project4:
+        'Een functionele en responsive e-commerce website gericht op Apple-producten met HTML, CSS en JavaScript.',
+      project6:
+        'Een moderne, responsieve persoonlijke website gebouwd met React en gestyled met Tailwind CSS, met een overzicht van mijn vaardigheden en projecten.',
       github: 'GitHub',
       linkedin: 'LinkedIn',
       footer: 'Alle rechten voorbehouden.',
-      fullStack: 'Full Stack',
-      webDev: 'Web Development',
-      cyber: 'Cybersecurity',
-      figma: 'Figma',
-      uiux: 'UI/UX',
-      mobileAppDesign: 'Mobile App Design',
       html: 'HTML',
       css: 'CSS',
       js: 'JavaScript',
       php: 'PHP',
-      sql: 'SQL',
       react: 'React',
       tailwind: 'Tailwind',
-      responsiveness: 'Responsiveness',
-      kali: 'Kali Linux',
-      penetesting: 'Penetesting',
     },
     en: {
       projecten: 'Projects',
@@ -117,43 +109,43 @@ export default function HomePage() {
       welkom: 'My portfolio with all assignments, certificates and projects.',
       expertise: 'With experience in web development, cybersecurity and app Design',
       zieMeer: 'See more',
-      neemContact: 'Contact Me',
       mijnWerk: 'My Work',
-      project1:
-      '',
-      project2:
-        'Capture The Flag challenge for Security, where I learned about tools such as Nmap, John The Ripper, Nikto and a custom bruteforce scripts.',
-      project3:
-        'A gamified community app where residents earn points for neighborhood activities and can redeem them for discounts at local stores.',
-      project4: 'Working e-commerce website made with HTML, CSS and JavaScript.',
-      project5: 'Interactive appointment planner made with PHP, CSS and SQL.',
-      project6:
-        "A personal 'About Me' website built in React, with a top 10 favorite albums section and a built-in cookie-clicker game.",
+      aboutTitle: 'About Me',
+      aboutDescription1:
+        "Hi! I'm Rayan Aghmer, a full-stack web developer specialized in React, Next.js, PHP, and Tailwind CSS. I create beautiful, performant, and secure applications.",
+      aboutDescription2:
+        'I have experience in cybersecurity, web development, and app design projects. I am eager to learn and enjoy working on challenging projects.',
+      skillsTitle: 'Skills',
+      skills: ['React', 'Next.js', 'Tailwind CSS', 'PHP', 'MySQL', 'JavaScript', 'Cybersecurity'],
+      workTitle: 'Work Experience',
+      work1:
+        'TechCompany - Fullstack Developer - 2022 to Present: developing internal and external web applications.',
+      work2:
+        'WebStudio - Intern - 2021: assisting in frontend development and security audits.',
+      interestsTitle: 'Things I find interesting',
+      interestsDescription:
+        'Here are videos about web technologies, cybersecurity, and design that inspire me.',
+      youtubeVideoUrls: [
+        'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        'https://www.youtube.com/embed/3JZ_D3ELwOQ',
+      ],
+      downloadCV: 'Download my CV',
       casino: 'Casino site',
-      mrRobot: 'Mr Robot Capture The Flag',
-      mobileApp: 'Mobile App UI/UX',
-      ecommerce: 'E-commerce Website',
-      afsprakenplanner: 'Simple Appointment Planner',
-      aboutSite: 'About Me Site',
+      project1:
+        'A dynamic online casino site built using PHP for backend logic, styled with CSS, and enhanced with JavaScript for interactivity.',
+      project4:
+        'A responsive e-commerce platform focused on Apple products, developed with HTML, CSS, and JavaScript.',
+      project6:
+        'A modern personal portfolio website created with React and Tailwind CSS, highlighting my skills and projects.',
       github: 'GitHub',
       linkedin: 'LinkedIn',
       footer: 'All rights reserved.',
-      fullStack: 'Full Stack',
-      webDev: 'Web Development',
-      cyber: 'Cybersecurity',
-      figma: 'Figma',
-      uiux: 'UI/UX',
-      mobileAppDesign: 'Mobile App Design',
       html: 'HTML',
       css: 'CSS',
       js: 'JavaScript',
       php: 'PHP',
-      sql: 'SQL',
       react: 'React',
       tailwind: 'Tailwind',
-      responsiveness: 'Responsiveness',
-      kali: 'Kali Linux',
-      penetesting: 'Penetesting',
     },
   }
 
@@ -197,7 +189,7 @@ export default function HomePage() {
           </a>
         </nav>
         <div className="flex items-center space-x-2">
-          {/* Thema Switcher */}
+          {/* Theme Switch */}
           <button
             onClick={toggleTheme}
             className={`p-2 rounded-lg transition-all duration-300 ${
@@ -208,7 +200,11 @@ export default function HomePage() {
             aria-label="Toggle theme"
           >
             {isDarkMode ? (
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <svg
+                className="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
                 <path
                   fillRule="evenodd"
                   d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
@@ -216,53 +212,37 @@ export default function HomePage() {
                 />
               </svg>
             ) : (
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <svg
+                className="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
               </svg>
             )}
           </button>
 
-          {/* Taal wissel button */}
+          {/* Language Switch */}
           <button
             onClick={() => setIsEnglish((v) => !v)}
             className={`p-2 rounded-lg transition-all duration-300 ${
-              isDarkMode
-                ? 'bg-gray-800 hover:bg-gray-700'
-                : 'bg-gray-200 hover:bg-gray-300'
+              isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'
             }`}
-            aria-label="Taal"
+            aria-label="Toggle language"
           >
             {isEnglish ? (
               <svg viewBox="0 0 24 24" width="24" height="24">
                 <rect width="24" height="24" fill="#00247d" />
-                <path
-                  d="M0,0 24,24 M24,0 0,24"
-                  stroke="#fff"
-                  strokeWidth="4"
-                />
-                <path
-                  d="M12,0 12,24 M0,12 24,12"
-                  stroke="#fff"
-                  strokeWidth="6"
-                />
-                <path
-                  d="M0,0 24,24 M24,0 0,24"
-                  stroke="#cf142b"
-                  strokeWidth="2"
-                />
-                <path
-                  d="M12,0 12,24 M0,12 24,12"
-                  stroke="#cf142b"
-                  strokeWidth="2"
-                />
+                <path d="M0,0 24,24 M24,0 0,24" stroke="#fff" strokeWidth="4" />
+                <path d="M12,0 12,24 M0,12 24,12" stroke="#fff" strokeWidth="6" />
+                <path d="M0,0 24,24 M24,0 0,24" stroke="#cf142b" strokeWidth="2" />
+                <path d="M12,0 12,24 M0,12 24,12" stroke="#cf142b" strokeWidth="2" />
               </svg>
             ) : (
               <svg viewBox="0 0 24 24" width="24" height="24">
-                <rect x="0" y="0" width="24" height="8" fill="#21468B" />{' '}
-                {/* blauw onderaan */}
+                <rect x="0" y="0" width="24" height="8" fill="#21468B" />
                 <rect x="0" y="8" width="24" height="8" fill="#fff" />
-                <rect x="0" y="16" width="24" height="8" fill="#ae1c28" />{' '}
-                {/* rood bovenaan */}
+                <rect x="0" y="16" width="24" height="8" fill="#ae1c28" />
               </svg>
             )}
           </button>
@@ -271,201 +251,209 @@ export default function HomePage() {
 
       <main className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] px-6">
         <div className="text-center max-w-4xl">
-          <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
-            Rayan Aghmer
-          </h1>
-
-          <p
-            className={`text-xl md:text-2xl mb-8 max-w-3xl mx-auto ${
-              isDarkMode ? 'text-gray-300' : 'text-gray-600'
-            }`}
-          >
-            {t.welkom}{' '}
-            <strong className={isDarkMode ? 'text-white' : 'text-gray-900'}>
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">Rayan Aghmer</h1>
+          <p className={`text-xl md:text-2xl mb-8 max-w-3xl mx-auto ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+            {t.welkom} <strong className={isDarkMode ? 'text-white' : 'text-gray-900'}>
               {t.expertise}
             </strong>
           </p>
-
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <button
-              onClick={() =>
-                document
-                  .getElementById('werk-sectie')
-                  .scrollIntoView({ behavior: 'smooth' })
-              }
-              className={`border px-8 py-4 rounded-lg font-medium transition-all duration-300 ${
-                isDarkMode
-                  ? 'bg-transparent border-white text-white hover:bg-white hover:text-black'
-                  : 'bg-transparent border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'
-              }`}
+              onClick={() => document.getElementById('werk-sectie').scrollIntoView({ behavior: 'smooth' })}
+              className={`border px-8 py-4 rounded-lg font-medium transition-all duration-300 ${isDarkMode ? 'bg-transparent border-white text-white hover:bg-white hover:text-black' : 'bg-transparent border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'}`}
             >
               {t.zieMeer}
             </button>
           </div>
-          <div className="flex items-center justify-center text-gray-400">
-            <svg
-              className="w-4 h-4 mr-2"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
         </div>
       </main>
 
-      <section id="werk-sectie" className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            {t.mijnWerk}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Casino site */}
-            <a
-              href="https://github.com/rayanaghmer/portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`block backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
-                isDarkMode
-                  ? 'bg-gradient-to-br from-blue-800/20 to-slate-800/20 border border-blue-500/20 hover:border-blue-400/40'
-                  : 'bg-gradient-to-br from-blue-100/50 to-slate-100/50 border border-blue-300/30 hover:border-blue-400/50'
-              }`}
-            >
-              <div className="w-full h-48 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg mb-4 flex items-center justify-center">
-                <img
-                  src="/casino.jpeg"
-                  alt="Casino site"
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{t.casino}</h3>
-              <p
-                className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}
-              >
-                {t.project1}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span
-                  className={`px-3 py-1 rounded-full text-sm ${
-                    isDarkMode ? 'bg-blue-600/20 text-blue-300' : 'bg-blue-100 text-blue-800'
-                  }`}
-                >
-                  {t.react}
-                </span>
-                <span
-                  className={`px-3 py-1 rounded-full text-sm ${
-                    isDarkMode ? 'bg-blue-600/20 text-blue-300' : 'bg-blue-100 text-blue-800'
-                  }`}
-                >
-                  {t.tailwind}
-                </span>
-              </div>
-            </a>
+      {/* About Me Section */}
+      <section id="about-me" className="max-w-5xl mx-auto px-6 py-20">
+        <h2 className="text-4xl font-bold mb-8 text-center">{t.aboutTitle}</h2>
+        <div className="flex flex-col md:flex-row gap-10 items-center">
+          <div className={`text-lg flex-1 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+            <p className="mb-4">{t.aboutDescription1}</p>
+            <p className="mb-4">{t.aboutDescription2}</p>
 
-            {/* E-commerce Website */}
-            <a
-              href="https://github.com/rayanaghmer/ecommerce-platform"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`block backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
-                isDarkMode
-                  ? 'bg-gradient-to-br from-orange-600/20 to-orange-800/20 border border-orange-600/20 hover:border-orange-500/40'
-                  : 'bg-gradient-to-br from-orange-100/50 to-orange-200/50 border border-orange-200/50 hover:border-orange-400/70'
-              }`}
+            <button
+              onClick={() => window.open('/cv.pdf', '_blank')}
+              className="mb-6 inline-block rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
-              <div className="w-full h-48 bg-gradient-to-br from-orange-600 to-orange-800 rounded-lg mb-4 flex items-center justify-center">
-                <img
-                  src="/apple.png"
-                  alt="Ecommerce website"
-                  className="w-full h-full object-cover rounded-lg"
+              {t.downloadCV}
+            </button>
+
+            <h3 className="text-2xl font-semibold mb-4">{t.skillsTitle}</h3>
+            <ul className="flex flex-wrap gap-3 mb-8">
+              {t.skills.map((skill, i) => (
+                <li
+                  key={i}
+                  className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-1 text-white font-semibold shadow-lg cursor-default select-none hover:scale-110 transform transition-transform"
+                >
+                  {skill}
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="text-2xl font-semibold mb-4">{t.workTitle}</h3>
+            <ul className="list-disc list-inside mb-6">
+              <li>{t.work1}</li>
+              <li>{t.work2}</li>
+            </ul>
+
+            <h3 className="text-2xl font-semibold mb-4">{t.interestsTitle}</h3>
+            <p className="mb-6">{t.interestsDescription}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {t.youtubeVideoUrls.map((url, i) => (
+                <iframe
+                  key={i}
+                  width="100%"
+                  height="200"
+                  src={url}
+                  title={`YouTube video ${i + 1}`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="rounded-lg shadow-lg"
                 />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{t.ecommerce}</h3>
-              <p
-                className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}
-              >
-                {t.project4}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span
-                  className={`px-3 py-1 rounded-full text-sm ${
-                    isDarkMode ? 'bg-orange-600/20 text-orange-300' : 'bg-orange-100 text-orange-800'
-                  }`}
-                >
-                  {t.php}
-                </span>
-                <span
-                  className={`px-3 py-1 rounded-full text-sm ${
-                    isDarkMode ? 'bg-orange-600/20 text-orange-300' : 'bg-orange-100 text-orange-800'
-                  }`}
-                >
-                  {t.css}
-                </span>
-                <span
-                  className={`px-3 py-1 rounded-full text-sm ${
-                    isDarkMode ? 'bg-orange-600/20 text-orange-300' : 'bg-orange-100 text-orange-800'
-                  }`}
-                >
-                  {t.js}
-                </span>
-              </div>
-            </a>
-            {/* About Me Site */}
-            <a
-              href="https://github.com/rayanaghmer/cicd-pipeline"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`block backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
-                isDarkMode
-                  ? 'bg-gradient-to-br from-teal-600/20 to-teal-800/20 border border-teal-600/20 hover:border-teal-500/40'
-                  : 'bg-gradient-to-br from-teal-100/50 to-teal-200/50 border border-teal-200/50 hover:border-teal-400/70'
-              }`}
-            >
-              <div className="w-full h-48 bg-gradient-to-br from-teal-600 to-teal-800 rounded-lg mb-4 flex items-center justify-center">
-                <img
-                  src="/react.jpg"
-                  alt="About Me Site"
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{t.aboutSite}</h3>
-              <p
-                className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}
-              >
-                {t.project6}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span
-                  className={`px-3 py-1 rounded-full text-sm ${
-                    isDarkMode ? 'bg-teal-600/20 text-teal-300' : 'bg-teal-100 text-teal-800'
-                  }`}
-                >
-                  {t.react}
-                </span>
-                <span
-                  className={`px-3 py-1 rounded-full text-sm ${
-                    isDarkMode ? 'bg-teal-600/20 text-teal-300' : 'bg-teal-100 text-teal-800'
-                  }`}
-                >
-                  {t.tailwind}
-                </span>
-                <span
-                  className={`px-3 py-1 rounded-full text-sm ${
-                    isDarkMode ? 'bg-teal-600/20 text-teal-300' : 'bg-teal-100 text-teal-800'
-                  }`}
-                >
-                  {t.responsiveness}
-                </span>
-              </div>
-            </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Projects Section */}
+      <section id="werk-sectie" className="py-20 px-6 max-w-6xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">{t.mijnWerk}</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Casino site */}
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`block backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
+              isDarkMode
+                ? 'bg-gradient-to-br from-blue-800/20 to-slate-800/20 border border-blue-500/20 hover:border-blue-400/40'
+                : 'bg-gradient-to-br from-blue-100/50 to-slate-100/50 border border-blue-300/30 hover:border-blue-400/50'
+            }`}
+          >
+            <div className="w-full h-48 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg mb-4 flex items-center justify-center">
+              <img
+                src="/casino.jpeg"
+                alt="Casino site"
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+            <h3 className="text-xl font-semibold mb-2">{t.casino}</h3>
+            <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>{t.project1}</p>
+            <div className="flex flex-wrap gap-2">
+              <span
+                className={`px-3 py-1 rounded-full text-sm ${
+                  isDarkMode ? 'bg-blue-600/20 text-blue-300' : 'bg-blue-100 text-blue-800'
+                }`}
+              >
+                {t.php}
+              </span>
+              <span
+                className={`px-3 py-1 rounded-full text-sm ${
+                  isDarkMode ? 'bg-blue-600/20 text-blue-300' : 'bg-blue-100 text-blue-800'
+                }`}
+              >
+                {t.css}
+              </span>
+              <span
+                className={`px-3 py-1 rounded-full text-sm ${
+                  isDarkMode ? 'bg-blue-600/20 text-blue-300' : 'bg-blue-100 text-blue-800'
+                }`}
+              >
+                JavaScript
+              </span>
+            </div>
+          </a>
+
+          {/* E-commerce Website */}
+          <a
+            href="http://193.233.19.222/apple/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`block backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
+              isDarkMode
+                ? 'bg-gradient-to-br from-orange-600/20 to-orange-800/20 border border-orange-600/20 hover:border-orange-500/40'
+                : 'bg-gradient-to-br from-orange-100/50 to-orange-200/50 border border-orange-200/50 hover:border-orange-400/70'
+            }`}
+          >
+            <div className="w-full h-48 bg-gradient-to-br from-orange-600 to-orange-800 rounded-lg mb-4 flex items-center justify-center">
+              <img
+                src="/apple.png"
+                alt="Ecommerce website"
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+            <h3 className="text-xl font-semibold mb-2">{t.ecommerce}</h3>
+            <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>{t.project4}</p>
+            <div className="flex flex-wrap gap-2">
+              <span
+                className={`px-3 py-1 rounded-full text-sm ${
+                  isDarkMode ? 'bg-orange-600/20 text-orange-300' : 'bg-orange-100 text-orange-800'
+                }`}
+              >
+                HTML
+              </span>
+              <span
+                className={`px-3 py-1 rounded-full text-sm ${
+                  isDarkMode ? 'bg-orange-600/20 text-orange-300' : 'bg-orange-100 text-orange-800'
+                }`}
+              >
+                CSS
+              </span>
+              <span
+                className={`px-3 py-1 rounded-full text-sm ${
+                  isDarkMode ? 'bg-orange-600/20 text-orange-300' : 'bg-orange-100 text-orange-800'
+                }`}
+              >
+                JavaScript
+              </span>
+            </div>
+          </a>
+
+          {/* About Me Site */}
+          <a
+            href="https://37596.hosts2.ma-cloud.nl/reactapp/dist/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`block backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
+              isDarkMode
+                ? 'bg-gradient-to-br from-teal-600/20 to-teal-800/20 border border-teal-600/20 hover:border-teal-500/40'
+                : 'bg-gradient-to-br from-teal-100/50 to-teal-200/50 border border-teal-200/50 hover:border-teal-400/70'
+            }`}
+          >
+            <div className="w-full h-48 bg-gradient-to-br from-teal-600 to-teal-800 rounded-lg mb-4 flex items-center justify-center">
+              {/* React image removed as requested */}
+              <div className={`text-white text-center text-lg px-4`}>
+                <p>A modern personal portfolio site built with React and Tailwind CSS, highlighting skills and projects.</p>
+              </div>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">{t.aboutSite}</h3>
+            <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              {t.project6}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className={`px-3 py-1 rounded-full text-sm ${isDarkMode ? 'bg-teal-600/20 text-teal-300' : 'bg-teal-100 text-teal-800'}`}>
+                {t.react}
+              </span>
+              <span className={`px-3 py-1 rounded-full text-sm ${isDarkMode ? 'bg-teal-600/20 text-teal-300' : 'bg-teal-100 text-teal-800'}`}>
+                {t.tailwind}
+              </span>
+              <span className={`px-3 py-1 rounded-full text-sm ${isDarkMode ? 'bg-teal-600/20 text-teal-300' : 'bg-teal-100 text-teal-800'}`}>
+                {t.responsiveness}
+              </span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
       <footer
         className={`py-12 px-6 border-t ${
           isDarkMode
@@ -511,24 +499,6 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
-
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `
-                linear-gradient(${isDarkMode ? 'rgba(59, 130, 246, 0.1)' : 'rgba(59, 130, 246, 0.05)'} 1px, transparent 1px),
-                linear-gradient(90deg, ${isDarkMode ? 'rgba(59, 130, 246, 0.1)' : 'rgba(59, 130, 246, 0.05)'} 1px, transparent 1px)
-              `,
-              backgroundSize: '50px 50px',
-            }}
-          ></div>
-          <div className={`absolute top-20 left-20 w-32 h-32 border rounded-full ${isDarkMode ? 'border-blue-400 opacity-5' : 'border-blue-600 opacity-10'}`}></div>
-          <div className={`absolute bottom-20 right-20 w-24 h-24 border rounded-full ${isDarkMode ? 'border-blue-300 opacity-5' : 'border-blue-500 opacity-10'}`}></div>
-          <div className={`absolute top-1/2 left-1/4 w-16 h-16 border rounded-full ${isDarkMode ? 'border-blue-500 opacity-5' : 'border-blue-700 opacity-10'}`}></div>
-        </div>
-      </div>
     </div>
   )
 }

@@ -31,7 +31,7 @@ const projectenData = [
     id: 3,
     title: 'Mobile App Design - Mobile App UI/UX',
     description: 'Gamified buurtapp met punten verdienen en kortingen voor bewoners.',
-    tags: ['Figma', 'UI/UX', 'Mobile App Desig'],
+    tags: ['Figma', 'UI/UX', 'Mobile App Design'],
     categoryColor: 'purple',
     url: 'https://www.figma.com/proto/ZDuc7sfMy9Y6Awb9mugM4I/High-Fidelity-Prototype?node-id=265-2270',
     bgGradientFrom: 'from-purple-600',
