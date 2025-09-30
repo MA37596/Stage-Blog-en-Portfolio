@@ -48,7 +48,7 @@ export default function StageBedrijfForm() {
     display: 'block',
     marginBottom: '8px',
     fontWeight: '600',
-    color: '#6a0dad'
+    color: '#32a83e'
   };
 
   return (
@@ -64,7 +64,7 @@ export default function StageBedrijfForm() {
       <h2 style={{
         textAlign: 'center',
         marginBottom: '26px',
-        color: '#6a0dad',
+        color: '#32a83e',
         fontWeight: '700'
       }}>Stagebedrijf aanmelden</h2>
       <form onSubmit={handleSubmit}>
@@ -118,7 +118,7 @@ export default function StageBedrijfForm() {
           style={{
             width: '100%',
             padding: '13px',
-            backgroundColor: '#6a0dad',
+            backgroundColor: '#32a83e',
             color: 'white',
             fontWeight: '700',
             fontSize: '16px',
@@ -145,7 +145,7 @@ export default function StageBedrijfForm() {
           width: '100%',
           padding: '11px',
           backgroundColor: '#ece7fa',
-          color: '#380076',
+          color: '#32a83e',
           fontWeight: '700',
           fontSize: '15px',
           borderRadius: '8px',

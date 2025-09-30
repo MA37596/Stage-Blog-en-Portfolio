@@ -114,7 +114,7 @@ export default function CertificatenPage() {
           <a href="/certificaten" className={`hover:opacity-70 transition-opacity ${
             isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'
           }`}>Certificaten</a>
-          <a href="#" className={`hover:opacity-70 transition-opacity ${
+          <a href="/contact" className={`hover:opacity-70 transition-opacity ${
             isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'
           }`}>Contact</a>
           <a href="#" className={`hover:opacity-70 transition-opacity ${
