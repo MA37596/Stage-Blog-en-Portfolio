@@ -89,7 +89,7 @@ export default function HomePage() {
         'Een dynamische en interactieve casino website, gebouwd met PHP voor server-side logica, CSS voor een aantrekkelijke stijl, en JavaScript voor interactieve spellen.',
       apple: 'Apple E-Commerce',
       project4: 'Een functionele en responsive e-commerce website gericht op Apple-producten met PHP, CSS en JavaScript.',
-      project6: '',
+      project6: 'About Me Site met React, Tailwind. Met een cookie clicker game en een top 10 albums.',
       github: 'GitHub',
       linkedin: 'LinkedIn',
       footer: 'Alle rechten voorbehouden.',
@@ -114,13 +114,13 @@ export default function HomePage() {
       aboutDescription2:
         'I have experience in cybersecurity, web development, and app design projects. I am eager to learn and enjoy working on challenging projects.',
       skillsTitle: 'Skills',
-      skills: ['React', 'Next.js', 'Tailwind CSS', 'PHP', 'MySQL', 'JavaScript', 'Cybersecurity'],
+      skills: ['HTML', 'CSS', 'JavaScript', 'PHP', 'SQL', 'JSON', 'Kali Linux' ,'Photoshop & Premiere Pro'],
       workTitle: 'Work Experience',
-      work1: 'Zelfstandig - Fullstack Developer - 2022 to present: development of internal and external web applications.',
+      work1: 'Self-employed - Fullstack Developer - 2022 to present: development of internal and external web applications. I also have experience making telegram/discord bots using JavaScript and Python.',
       work2: 'ComputerGlobe 2021 to 2024: Mobile device repairs, virus removal, and data recovery from hard drives.',
       interestsTitle: 'Things I find interesting',
       interestsDescription:
-        'Here are videos about web technologies, cybersecurity, and design that inspire me.',
+        'Here are videos about web technologies and cybersecurity that inspire me.',
       youtubeVideoUrls: [
         'https://www.youtube.com/embed/BGsw_l0tT10?start=253&pp=ygUUYW50aG9ueSB2YW4gZGVyIG1lZXI%3D',
         'https://www.youtube.com/embed/cFGAAeTTmXM?list=PL_NnG4jzzKogm7HiP3Etlpwy2MKZGFwxO',
@@ -128,8 +128,8 @@ export default function HomePage() {
       casino: 'Casino site',
       project1:
         'A dynamic online casino site built using PHP for backend logic, styled with CSS, and enhanced with JavaScript for interactivity.',
+      Apple: 'Apple E-commerce', 
       project4: 'A responsive e-commerce platform focused on Apple products, developed with HTML, CSS, and JavaScript.',
-      project6: '',
       github: 'GitHub',
       linkedin: 'LinkedIn',
       footer: 'All rights reserved.',
@@ -282,7 +282,7 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <a
-            href="#"
+            href="http://193.233.19.222/kaartspel/casino.html"
             target="_blank"
             rel="noopener noreferrer"
             className={`block backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
@@ -336,8 +336,6 @@ export default function HomePage() {
             </div>  
           </a>
 
-          {/* About Me Site */}
-        {/* About Me Site */}
 <a
   href="https://37596.hosts2.ma-cloud.nl/reactapp/dist/"
   target="_blank"
@@ -368,7 +366,7 @@ export default function HomePage() {
 
         </div>
       </section>
-
+{/* Vanaf hier begint de footer*/}
       <footer
         className={`py-12 px-6 border-t ${isDarkMode ? 'border-gray-700 bg-gradient-to-r from-slate-900/50 to-blue-900/50' : 'border-gray-200 bg-gradient-to-r from-blue-50/50 to-slate-50/50'}`}
       >
@@ -405,3 +403,4 @@ export default function HomePage() {
     </div>
   )
 }
+

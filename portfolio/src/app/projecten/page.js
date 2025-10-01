@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 const projectenData = [
-  // Hier al jouw projecten in dezelfde volgorde en data
   {
     id: 1,
     title: 'Game Website - Casino site',
@@ -12,7 +11,8 @@ const projectenData = [
       'Moderne portfolio website gebouwd met Next.js en Tailwind CSS, responsive design en smooth scrolling.',
     tags: ['PHP', 'CSS', 'JS'],
     categoryColor: 'blue',
-    url: 'https://github.com/rayanaghmer/portfolio',
+    url: 'http://193.233.19.222/kaartspel/casino.html',
+    github: 'https://github.com/MA37596/Casino-Kaartspellen',
     bgGradientFrom: 'from-blue-600',
     bgGradientTo: 'to-blue-800',
     image: '/casino.jpeg',
@@ -24,7 +24,7 @@ const projectenData = [
       'Capture The Flag met tools als Nmap, John The Ripper, Nikto en brute force scripting.',
     tags: ['Cybersecurity', 'Penetration Testing'],
     categoryColor: 'green',
-    url: '', // geen url
+    url: '',
     bgGradientFrom: 'from-green-600',
     bgGradientTo: 'to-green-800',
     image: '/capturetheflag.jpg',
@@ -57,7 +57,8 @@ const projectenData = [
     description: 'Interactief dashboard met PHP, CSS en SQL.',
     tags: ['PHP', 'CSS', 'SQL'],
     categoryColor: 'red',
-    url: 'https://github.com/rayanaghmer/',
+    url: 'http://193.233.19.222/agsplanner/public/',
+    github: 'https://github.com/MA37596/agskopie',
     bgGradientFrom: 'from-red-600',
     bgGradientTo: 'to-red-800',
     image: '/printplanner.png',
@@ -70,6 +71,7 @@ const projectenData = [
     tags: ['React', 'Tailwind'],
     categoryColor: 'teal',
     url: 'https://37596.hosts2.ma-cloud.nl/reactapp/dist/',
+    github: 'https://github.com/MA37596/React-Pagina',
     bgGradientFrom: 'from-teal-600',
     bgGradientTo: 'to-teal-800',
     image: '/react.jpg',
@@ -81,6 +83,7 @@ const projectenData = [
     tags: ['HTML', 'CSS', 'JavaScript'],
     categoryColor: 'blue',
     url: 'http://193.233.19.222/cookieclicker/',
+    github: 'https://github.com/MA37596/Cookie-Clicker',
     bgGradientFrom: 'from-blue-600',
     bgGradientTo: 'to-blue-800',
     image: '/cookierclicker.webp',
@@ -126,7 +129,8 @@ const projectenData = [
       'Een strakke en functionele landingspagina met een duidelijke call-to-action en contactmogelijkheden. Geeft bezoekers direct inzicht en nodigt uit om verder te klikken. Samen gesteld uit HTML, CSS en JavaScript met aandacht voor snelheid en conversie.',
     tags: ['HTML', 'CSS', 'JavaScript'],
     categoryColor: 'red',
-    url: '#',
+    url: 'http://193.233.19.222/unity/',
+    github: 'https://github.com/MA37596/SV-Unity',
     bgGradientFrom: 'from-red-600',
     bgGradientTo: 'to-red-800',
     image: '/landingpage.png',
@@ -135,10 +139,11 @@ const projectenData = [
     id: 12,
     title: 'Accountancy',
     description:
-      'Een strakke en functionele landingspagina met een duidelijke call-to-action en contactmogelijkheden. Geeft bezoekers direct inzicht en nodigt uit om verder te klikken. Samen gesteld uit HTML, CSS en JavaScript met aandacht voor snelheid en conversie.',
+      'Een strakke en functionele landingspagina met een duidelijke call-to-action en contactmogelijkheden. Geeft bezoekers direct inzicht en nodigt uit om verder te klikken. Samen gesteld uit HTML, Scss en JavaScript met aandacht voor snelheid en conversie.',
     tags: ['HTML', 'Scss', 'JavaScript'],
     categoryColor: 'teal',
-    url: '#',
+    url: 'http://193.233.19.222/Accountancy/index.html',
+    github: 'https://github.com/MA37596/Boekhoudsite', // toegevoegd github link
     bgGradientFrom: 'from-teal-600',
     bgGradientTo: 'to-teal-800',
     image: '/accountancy.webp',
@@ -162,7 +167,7 @@ const projectenData = [
       'Een kleurrijk en speels project waarin Pokémon-stijl en branding centraal staan. Dit voorbeeld is visueel gebaseerd op iconische Pokémon graphics en maakt gebruik van HTML, CSS en JavaScript voor diverse animaties en interacties.',
     tags: ['HTML', 'CSS', 'JavaScript'],
     categoryColor: 'purple',
-    url: '#',
+    url: 'http://193.233.19.222/pokemon/', // live link toegevoegd
     bgGradientFrom: 'from-purple-600',
     bgGradientTo: 'to-purple-800',
     image: '/pokemon.png',
@@ -201,6 +206,7 @@ const filterOptions = [
 export default function ProjectenPage() {
   const [isDarkMode, setIsDarkMode] = useState(true)
   const [activeFilters, setActiveFilters] = useState([])
+  const [selectedProject, setSelectedProject] = useState(null)
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
@@ -227,6 +233,8 @@ export default function ProjectenPage() {
       : projectenData.filter((proj) =>
           proj.tags.some((tag) => activeFilters.includes(tag))
         )
+
+  const closeModal = () => setSelectedProject(null)
 
   return (
     <div
@@ -296,7 +304,6 @@ export default function ProjectenPage() {
         </button>
       </header>
 
-
       {/* Filter Buttons */}
       <section className="max-w-7xl mx-auto px-6 py-6">
         <h2
@@ -313,14 +320,14 @@ export default function ProjectenPage() {
               <button
                 key={tag}
                 onClick={() => toggleFilter(tag)}
-                className={`px-5 py-2 rounded-full font-semibold transition duration-300 border border-transparent shadow-md focus:outline-none focus:ring-2 focus:ring-offset-1 ${
+                className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
                   active
                     ? isDarkMode
-                      ? 'bg-green-600 text-white shadow-green-700/50 hover:bg-green-700'
-                      : 'bg-green-400 text-white shadow-green-400/60 hover:bg-green-500'
+                      ? 'bg-gradient-to-r from-green-500 to-green-700 shadow-lg text-white ring-green-400'
+                      : 'bg-gradient-to-r from-green-400 to-green-600 shadow-md text-white ring-green-500'
                     : isDarkMode
-                    ? 'bg-green-900 text-green-300 hover:bg-green-700 hover:text-white'
-                    : 'bg-green-100 text-green-700 hover:bg-green-300 hover:text-green-900'
+                    ? 'bg-gray-800 text-green-300 hover:bg-green-600 hover:text-white shadow-md hover:shadow-green-700 ring-transparent'
+                    : 'bg-gray-200 text-green-700 hover:bg-green-500 hover:text-white shadow-sm hover:shadow-green-500 ring-transparent'
                 }`}
                 aria-pressed={active}
               >
@@ -340,7 +347,6 @@ export default function ProjectenPage() {
         </div>
       </section>
 
-
       {/* Project Cards */}
       <main className="max-w-7xl mx-auto px-6 py-12">
         {displayedProjecten.length === 0 ? (
@@ -354,11 +360,9 @@ export default function ProjectenPage() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {displayedProjecten.map((proj) => (
-              <a
+              <div
                 key={proj.id}
-                href={proj.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => setSelectedProject(proj)}
                 className={`block rounded-xl p-6 backdrop-blur-sm transition-all duration-300 cursor-pointer transform hover:scale-105 border ${
                   isDarkMode
                     ? `bg-gradient-to-br ${proj.bgGradientFrom}/30 to-slate-900/30 border-${proj.categoryColor}-500/30 hover:border-${proj.categoryColor}-400/50`
@@ -403,12 +407,85 @@ export default function ProjectenPage() {
                     </span>
                   ))}
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         )}
       </main>
 
+      {/* Modal */}
+      {selectedProject && (
+        <div
+          className="fixed inset-0 flex justify-center items-center z-50 p-6"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}
+        >
+          <div className="bg-white dark:bg-gray-900 rounded-xl shadow-xl max-w-5xl w-full max-h-[85vh] overflow-auto relative grid grid-cols-1 md:grid-cols-3 gap-6 p-8">
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-900 dark:hover:text-white text-3xl font-bold transition"
+              aria-label="Close modal"
+            >
+              &times;
+            </button>
+            <div className="col-span-1">
+              {selectedProject.image && (
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="rounded-lg object-cover w-full max-h-[400px] md:max-h-full"
+                />
+              )}
+            </div>
+            <div className="col-span-2 flex flex-col justify-start">
+              <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">
+                {selectedProject.title}
+              </h2>
+              <p className="text-lg text-gray-800 dark:text-gray-300 mb-8 max-h-[50vh] overflow-auto leading-relaxed">
+                {selectedProject.description}
+              </p>
+              <div className="mb-6">
+                <h3 className="font-semibold mb-3 text-gray-700 dark:text-gray-400">
+                  Tags
+                </h3>
+                <div className="flex flex-wrap gap-3">
+                  {selectedProject.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-700 text-blue-900 dark:text-blue-200 font-semibold text-sm"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="flex gap-4">
+                {selectedProject.url && selectedProject.url !== '#' && (
+                  <a
+                    href={selectedProject.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold text-lg shadow-lg transition"
+                  >
+                    Live Demo
+                  </a>
+                )}
+                {selectedProject.github && (
+                  <a
+                    href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 border-2 border-green-600 hover:bg-green-600 hover:text-white text-green-600 rounded-lg font-semibold text-lg shadow-lg transition"
+                  >
+                    GitHub
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Footer */}
       <footer
         className={`py-12 px-6 mt-20 border-t ${
           isDarkMode

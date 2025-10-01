@@ -21,13 +21,11 @@ export default function CertificatenPage() {
   const [showColorPicker, setShowColorPicker] = useState(false)
 
   useEffect(() => {
-    // Check for saved theme preference or default to dark mode
     const savedTheme = localStorage.getItem('theme')
     if (savedTheme) {
       setIsDarkMode(savedTheme === 'dark')
     }
-    
-    // Check for saved gradient colors
+  
     const savedGradients = localStorage.getItem('gradientColors')
     if (savedGradients) {
       setGradientColors(JSON.parse(savedGradients))
@@ -54,7 +52,6 @@ export default function CertificatenPage() {
 
   const getGradientStyle = () => {
     const colors = isDarkMode ? gradientColors.dark : gradientColors.light
-    
     const colorMap = {
       'slate-900': '#0f172a',
       'gray-900': '#111827',
@@ -88,6 +85,31 @@ export default function CertificatenPage() {
     }
   }
 
+  const certificaten = [
+    {
+      id: 2,
+      title: 'Introduction To CyberSecurity',
+      description: 'Certificaat voor cybersecurity fundamentals inclusief penetration testing, vulnerability assessment en security best practices.',
+      tags: ['Penetration Testing', 'Security Analysis', 'Kali Linux'],
+      categoryColor: 'green',
+      url: 'https://www.credly.com/badges/6502612c-b8df-45b4-9f45-62162a444564/linked_in_profile',
+      bgGradientFrom: 'from-green-600',
+      bgGradientTo: 'to-green-800',
+      label: 'CyberSecurity',
+    },
+    {
+      id: 3,
+      title: 'Cybersecurity Fundamentals',
+      description: 'Cybersecurity fundamentals omvatten de basisprincipes en praktijken die organisaties helpen systemen, netwerken en data te beveiligen.',
+      tags: ['Nmap', 'John The Ripper', 'WireShark'],
+      categoryColor: 'purple',
+      url: 'https://www.credly.com/badges/1336b598-e6fe-4dd5-bd5d-b1684ac03090/linked_in_profile',
+      bgGradientFrom: 'from-purple-600',
+      bgGradientTo: 'to-purple-800',
+      label: 'CyberSecurity',
+    },
+  ]
+
   return (
     <div 
       className={`min-h-screen transition-all duration-500 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}
@@ -101,10 +123,11 @@ export default function CertificatenPage() {
         
         <nav className="hidden md:flex items-center space-x-6">
           <Link href="/" className={`hover:opacity-70 transition-opacity ${isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'}`}>Home</Link>
-          <Link href="/" className={`hover:opacity-70 transition-opacity ${isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'}`}>Projecten</Link>
+          <Link href="/projecten" className={`hover:opacity-70 transition-opacity ${isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'}`}>Projecten</Link>
           <Link href="/certificaten" className={`hover:opacity-70 transition-opacity ${isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'}`}>Certificaten</Link>
           <Link href="/contact" className={`hover:opacity-70 transition-opacity ${isDarkMode ? 'hover:text-gray-300' : 'hover:text-gray-600'}`}>Contact</Link>
         </nav>
+
 
         <div className="flex items-center space-x-2">
           {/* Color Picker */}
@@ -115,6 +138,7 @@ export default function CertificatenPage() {
             }`}
             aria-label="Color picker"
           >
+            {/* icon svg */}
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z" clipRule="evenodd" />
             </svg>
@@ -128,6 +152,7 @@ export default function CertificatenPage() {
             }`}
             aria-label="Toggle theme"
           >
+            {/* icon svg */}
             {isDarkMode ? (
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd"/>
@@ -141,134 +166,16 @@ export default function CertificatenPage() {
         </div>
       </header>
 
+
       {/* Color Picker Panel */}
       {showColorPicker && (
         <div className={`fixed top-20 right-6 z-50 p-6 rounded-xl shadow-lg backdrop-blur-sm border ${
           isDarkMode ? 'bg-gray-800/90 border-gray-700' : 'bg-white/90 border-gray-200'
         }`}>
-          <h3 className={`text-lg font-semibold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-            Gradient Kleuren
-          </h3>
-          
-          <div className="space-y-4">
-            {/* Dark Mode Colors */}
-            <div>
-              <h4 className={`text-sm font-medium mb-2 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>Dark Mode</h4>
-              <div className="grid grid-cols-3 gap-2">
-                <div>
-                  <label className={`block text-xs mb-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Van</label>
-                  <select 
-                    value={gradientColors.dark.from}
-                    onChange={(e) => updateGradientColor('dark', 'from', e.target.value)}
-                    className={`w-full p-2 rounded text-sm ${isDarkMode ? 'bg-gray-700 text-white border-gray-600' : 'bg-gray-100 text-gray-900 border-gray-300'}`}
-                  >
-                    <option value="slate-900">Slate 900</option>
-                    <option value="gray-900">Gray 900</option>
-                    <option value="blue-900">Blue 900</option>
-                    <option value="purple-900">Purple 900</option>
-                    <option value="red-900">Red 900</option>
-                    <option value="green-900">Green 900</option>
-                    <option value="yellow-900">Yellow 900</option>
-                    <option value="pink-900">Pink 900</option>
-                  </select>
-                </div>
-                <div>
-                  <label className={`block text-xs mb-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Via</label>
-                  <select 
-                    value={gradientColors.dark.via}
-                    onChange={(e) => updateGradientColor('dark', 'via', e.target.value)}
-                    className={`w-full p-2 rounded text-sm ${isDarkMode ? 'bg-gray-700 text-white border-gray-600' : 'bg-gray-100 text-gray-900 border-gray-300'}`}
-                  >
-                    <option value="blue-900">Blue 900</option>
-                    <option value="purple-900">Purple 900</option>
-                    <option value="red-900">Red 900</option>
-                    <option value="green-900">Green 900</option>
-                    <option value="yellow-900">Yellow 900</option>
-                    <option value="pink-900">Pink 900</option>
-                    <option value="slate-900">Slate 900</option>
-                    <option value="gray-900">Gray 900</option>
-                  </select>
-                </div>
-                <div>
-                  <label className={`block text-xs mb-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Naar</label>
-                  <select 
-                    value={gradientColors.dark.to}
-                    onChange={(e) => updateGradientColor('dark', 'to', e.target.value)}
-                    className={`w-full p-2 rounded text-sm ${isDarkMode ? 'bg-gray-700 text-white border-gray-600' : 'bg-gray-100 text-gray-900 border-gray-300'}`}
-                  >
-                    <option value="slate-900">Slate 900</option>
-                    <option value="gray-900">Gray 900</option>
-                    <option value="blue-900">Blue 900</option>
-                    <option value="purple-900">Purple 900</option>
-                    <option value="red-900">Red 900</option>
-                    <option value="green-900">Green 900</option>
-                    <option value="yellow-900">Yellow 900</option>
-                    <option value="pink-900">Pink 900</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            {/* Light Mode Colors */}
-            <div>
-              <h4 className={`text-sm font-medium mb-2 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>Light Mode</h4>
-              <div className="grid grid-cols-3 gap-2">
-                <div>
-                  <label className={`block text-xs mb-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Van</label>
-                  <select 
-                    value={gradientColors.light.from}
-                    onChange={(e) => updateGradientColor('light', 'from', e.target.value)}
-                    className={`w-full p-2 rounded text-sm ${isDarkMode ? 'bg-gray-700 text-white border-gray-600' : 'bg-gray-100 text-gray-900 border-gray-300'}`}
-                  >
-                    <option value="blue-50">Blue 50</option>
-                    <option value="purple-50">Purple 50</option>
-                    <option value="red-50">Red 50</option>
-                    <option value="green-50">Green 50</option>
-                    <option value="yellow-50">Yellow 50</option>
-                    <option value="pink-50">Pink 50</option>
-                    <option value="slate-50">Slate 50</option>
-                    <option value="gray-50">Gray 50</option>
-                  </select>
-                </div>
-                <div>
-                  <label className={`block text-xs mb-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Via</label>
-                  <select 
-                    value={gradientColors.light.via}
-                    onChange={(e) => updateGradientColor('light', 'via', e.target.value)}
-                    className={`w-full p-2 rounded text-sm ${isDarkMode ? 'bg-gray-700 text-white border-gray-600' : 'bg-gray-100 text-gray-900 border-gray-300'}`}
-                  >
-                    <option value="blue-100">Blue 100</option>
-                    <option value="purple-100">Purple 100</option>
-                    <option value="red-100">Red 100</option>
-                    <option value="green-100">Green 100</option>
-                    <option value="yellow-100">Yellow 100</option>
-                    <option value="pink-100">Pink 100</option>
-                    <option value="slate-100">Slate 100</option>
-                    <option value="gray-100">Gray 100</option>
-                  </select>
-                </div>
-                <div>
-                  <label className={`block text-xs mb-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Naar</label>
-                  <select 
-                    value={gradientColors.light.to}
-                    onChange={(e) => updateGradientColor('light', 'to', e.target.value)}
-                    className={`w-full p-2 rounded text-sm ${isDarkMode ? 'bg-gray-700 text-white border-gray-600' : 'bg-gray-100 text-gray-900 border-gray-300'}`}
-                  >
-                    <option value="slate-50">Slate 50</option>
-                    <option value="gray-50">Gray 50</option>
-                    <option value="blue-50">Blue 50</option>
-                    <option value="purple-50">Purple 50</option>
-                    <option value="red-50">Red 50</option>
-                    <option value="green-50">Green 50</option>
-                    <option value="yellow-50">Yellow 50</option>
-                    <option value="pink-50">Pink 50</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Color picker content can be added here */}
         </div>
       )}
+
 
       {/* Main Content */}
       <main className="py-20 px-6">
@@ -277,112 +184,78 @@ export default function CertificatenPage() {
             Mijn Certificaten
           </h1>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Certificaat 1 */}
-            <div className={`backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
-              isDarkMode 
-                ? 'bg-gradient-to-br from-blue-800/20 to-slate-800/20 border border-blue-500/20 hover:border-blue-400/40' 
-                : 'bg-gradient-to-br from-blue-100/50 to-slate-100/50 border border-blue-300/30 hover:border-blue-400/50'
-            }`}>
-              <div className="w-full h-48 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-white font-semibold text-lg">Web Development</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">HTML & CSS Certificaat</h3>
-              <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                Certificaat voor het succesvol afronden van de HTML & CSS cursus met focus op responsive design en moderne CSS technieken.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-blue-600/20 text-blue-300' 
-                    : 'bg-blue-100 text-blue-800'
-                }`}>HTML</span>
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-blue-600/20 text-blue-300' 
-                    : 'bg-blue-100 text-blue-800'
-                }`}>CSS</span>
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-blue-600/20 text-blue-300' 
-                    : 'bg-blue-100 text-blue-800'
-                }`}>Responsive Design</span>
-              </div>
-            </div>
-
-            {/* Certificaat 2 */}
-            <div className={`backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
-              isDarkMode 
-                ? 'bg-gradient-to-br from-green-800/20 to-slate-800/20 border border-green-500/20 hover:border-green-400/40' 
-                : 'bg-gradient-to-br from-green-100/50 to-slate-100/50 border border-green-300/30 hover:border-green-400/50'
-            }`}>
-              <div className="w-full h-48 bg-gradient-to-br from-green-600 to-green-800 rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-white font-semibold text-lg">CyberSecurity</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Introduction To CyberSecurity</h3>
-              <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                Certificaat voor cybersecurity fundamentals inclusief penetration testing, vulnerability assessment en security best practices.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-green-600/20 text-green-300' 
-                    : 'bg-green-100 text-green-800'
-                }`}>Penetration Testing</span>
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-green-600/20 text-green-300' 
-                    : 'bg-green-100 text-green-800'
-                }`}>Security Analysis</span>
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-green-600/20 text-green-300' 
-                    : 'bg-green-100 text-green-800'
-                }`}>Kali Linux</span>
-              </div>
-            </div>
-
-            {/* Certificaat 3 */}
-            <div className={`backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
-              isDarkMode 
-                ? 'bg-gradient-to-br from-purple-800/20 to-slate-800/20 border border-purple-500/20 hover:border-purple-400/40' 
-                : 'bg-gradient-to-br from-purple-100/50 to-slate-100/50 border border-purple-300/30 hover:border-purple-400/50'
-            }`}>
-              <div className="w-full h-48 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-white font-semibold text-lg">CyberSecurity</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Cybersecurity Fundamentals</h3>
-              <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                Cybersecurity fundamentals omvatten de basisprincipes en praktijken die organisaties en individuen helpen hun systemen, netwerken en data te beveiligen tegen aanvallen en onbevoegde toegang.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-purple-600/20 text-purple-300' 
-                    : 'bg-purple-100 text-purple-800'
-                }`}>Nmap</span>
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-purple-600/20 text-purple-300' 
-                    : 'bg-purple-100 text-purple-800'
-                }`}>John The Ripper</span>
-                <span className={`px-3 py-1 rounded-full text-sm ${
-                  isDarkMode 
-                    ? 'bg-purple-600/20 text-purple-300' 
-                    : 'bg-purple-100 text-purple-800'
-                }`}>WireShark</span>
-              </div>
-            </div>
+          <div className="flex flex-col md:flex-row justify-center gap-8">
+            {certificaten.map(cert => (
+              cert.url && cert.url !== '#' ? (
+                <Link
+                  key={cert.id}
+                  href={cert.url}
+                  passHref
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block backdrop-blur-sm rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer max-w-md mx-auto ${
+                    isDarkMode 
+                      ? `bg-gradient-to-br ${cert.bgGradientFrom}/20 to-slate-800/20 border border-${cert.categoryColor}-500/20 hover:border-${cert.categoryColor}-400/40` 
+                      : `bg-gradient-to-br ${cert.bgGradientFrom}/50 to-slate-100/50 border border-${cert.categoryColor}-300/30 hover:border-${cert.categoryColor}-400/50`
+                  }`}
+                >
+                  <div className={`w-full h-48 bg-gradient-to-br ${cert.bgGradientFrom} ${cert.bgGradientTo} rounded-lg mb-4 flex items-center justify-center`}>
+                    <span className="text-white font-semibold text-lg">{cert.label}</span>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-center">{cert.title}</h3>
+                  <p className={`mb-4 text-center ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>{cert.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-4 justify-center">
+                    {cert.tags.map(tag => (
+                      <span 
+                        key={tag} 
+                        className={`px-3 py-1 rounded-full text-sm ${
+                          isDarkMode 
+                            ? `bg-${cert.categoryColor}-600/20 text-${cert.categoryColor}-300` 
+                            : `bg-${cert.categoryColor}-100 text-${cert.categoryColor}-800`
+                        }`}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </Link>
+              ) : (
+                <div
+                  key={cert.id}
+                  className={`backdrop-blur-sm rounded-xl p-6 cursor-default max-w-md mx-auto ${
+                    isDarkMode 
+                      ? `bg-gradient-to-br ${cert.bgGradientFrom}/20 to-slate-800/20 border border-${cert.categoryColor}-500/20` 
+                      : `bg-gradient-to-br ${cert.bgGradientFrom}/50 to-slate-100/50 border border-${cert.categoryColor}-300/30`
+                  }`}
+                >
+                  <div className={`w-full h-48 bg-gradient-to-br ${cert.bgGradientFrom} ${cert.bgGradientTo} rounded-lg mb-4 flex items-center justify-center`}>
+                    <span className="text-white font-semibold text-lg">{cert.label}</span>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-center">{cert.title}</h3>
+                  <p className={`mb-4 text-center ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>{cert.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-4 justify-center">
+                    {cert.tags.map(tag => (
+                      <span 
+                        key={tag} 
+                        className={`px-3 py-1 rounded-full text-sm ${
+                          isDarkMode 
+                            ? `bg-${cert.categoryColor}-600/20 text-${cert.categoryColor}-300` 
+                            : `bg-${cert.categoryColor}-100 text-${cert.categoryColor}-800`
+                        }`}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )
+            ))}
           </div>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className={`py-12 px-6 border-t ${
-        isDarkMode 
-          ? 'border-gray-700 bg-gradient-to-r from-slate-900/50 to-blue-900/50' 
-          : 'border-gray-200 bg-gradient-to-r from-blue-50/50 to-slate-50/50'
-      }`}>
+      <footer className={`py-12 px-6 border-t ${isDarkMode ? 'border-gray-700 bg-gradient-to-r from-slate-900/50 to-blue-900/50' : 'border-gray-200 bg-gradient-to-r from-blue-50/50 to-slate-50/50'}`}>
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-6 md:mb-0">
@@ -395,7 +268,7 @@ export default function CertificatenPage() {
             </div>
             
             <div className="flex items-center space-x-6">
-              <a
+              <Link
                 href="https://github.com/MA37596"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -407,9 +280,9 @@ export default function CertificatenPage() {
                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                 </svg>
                 <span className="font-medium">GitHub</span>
-              </a>
+              </Link>
               
-              <a
+              <Link
                 href="https://www.linkedin.com/in/rayan-a-372002350/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -421,7 +294,7 @@ export default function CertificatenPage() {
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                 </svg>
                 <span className="font-medium">LinkedIn</span>
-              </a>
+              </Link>
             </div>
           </div>
           
@@ -448,7 +321,7 @@ export default function CertificatenPage() {
           <div className={`absolute top-20 left-20 w-32 h-32 border rounded-full ${isDarkMode ? 'border-blue-400 opacity-5' : 'border-blue-600 opacity-10'}`}></div>
           <div className={`absolute bottom-20 right-20 w-24 h-24 border rounded-full ${isDarkMode ? 'border-blue-300 opacity-5' : 'border-blue-500 opacity-10'}`}></div>
           <div className={`absolute top-1/2 left-1/4 w-16 h-16 border rounded-full ${isDarkMode ? 'border-blue-500 opacity-5' : 'border-blue-700 opacity-10'}`}></div>
-        </div>
+      </div>
       </div>
     </div>
   )
