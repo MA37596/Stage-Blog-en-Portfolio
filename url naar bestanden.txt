@@ -1,0 +1,15 @@
+
+
+
+Living shapes Skills: http://193.233.19.222/skills/public/projects.php
+Unity:http://193.233.19.222/unity/
+Bem:http://193.233.19.222/bem/
+Modal:http://193.233.19.222/modal/
+AGS Planner:http://193.233.19.222/agsplanner/public/index.php
+Social Media: http://193.233.19.222/intersectionobserver/
+Color Match Game: http://193.233.19.222/html/
+Grid: http://193.233.19.222/grid/ (moet qua styling gefixt worden)
+Cookie Clicker: http://193.233.19.222/cookieclicker/
+Fancy card: http://193.233.19.222/fancycard/
+React-Project: https://37596.hosts2.ma-cloud.nl/reactapp/dist/
+Apple Opdracht: http://193.233.19.222/apple/
