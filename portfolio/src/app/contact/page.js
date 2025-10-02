@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { supabase } from '../lib/supabaseClient';
 
 export default function StageBedrijfForm() {
   const [formData, setFormData] = useState({
@@ -19,21 +20,23 @@ export default function StageBedrijfForm() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const res = await fetch('/api/saveBedrijf.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
+    const { error } = await supabase
+      .from('contact_messages') // juiste tabelnaam uit je Supabase database
+      .insert([{
+        bedrijfsnaam: formData.bedrijfsnaam,
+        mail: formData.email,           // database kolom heet mail
+        telefoonnummer: formData.telefoon,  // database kolom heet telefoonnummer
+        bericht: formData.bericht
+      }]);
 
-    if (res.ok) {
+    if (error) {
+      setMessage('Er is iets mis gegaan: ' + error.message);
+    } else {
       setMessage('Bedrijf succesvol opgeslagen!');
       setFormData({ bedrijfsnaam: '', email: '', telefoon: '', bericht: '' });
-    } else {
-      setMessage('Er is iets mis gegaan.');
     }
   }
 
-  // Stijlen met goede leesbaarheid (zwart op licht)
   const inputStyle = {
     width: '100%',
     padding: '12px',
