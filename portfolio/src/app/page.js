@@ -176,9 +176,9 @@ export default function HomePage() {
               </svg>
             ) : (
               <svg viewBox="0 0 24 24" width="24" height="24">
-                <rect x="0" y="0" width="24" height="8" fill="#21468B" />
+                <rect x="0" y="0" width="24" height="8" fill="#ae1c28" />
                 <rect x="0" y="8" width="24" height="8" fill="#fff" />
-                <rect x="0" y="16" width="24" height="8" fill="#ae1c28" />
+                <rect x="0" y="16" width="24" height="8" fill="#21468B" />
               </svg>
             )}
           </button>
