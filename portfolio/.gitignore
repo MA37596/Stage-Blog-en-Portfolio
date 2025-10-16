@@ -12,6 +12,7 @@
 .env.local
 
 wachtwoord.txt
+.env.development.local
 
 
 # testing
